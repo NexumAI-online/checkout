@@ -1,0 +1,2896 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#050005" />
+<title>Nexum Academy Pro™ — De cero a €5,000/mes con IA en 90 días | €1,500 fundadores</title>
+<meta name="description" content="Sistema completo para construir tu agencia de IA: +30 videos, +7 soluciones listas para vender, 3 mentorías semanales y comunidad de founders. Garantía 90 días. Solo 50 plazas." />
+<meta property="og:title" content="Nexum Academy Pro™ — De cero a €5,000/mes con IA" />
+<meta property="og:description" content="Precio fundadores €1,500 hasta el domingo 10. 50 plazas totales." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_ES" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://unpkg.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Nexum Academy Pro™",
+  "description": "Programa de 90 días para construir una agencia de IA y facturar más de €5,000/mes. Incluye +30 videos, +7 soluciones IA listas para vender, 3 mentorías semanales por 3 meses, comunidad de founders y garantía de resultado a 90 días.",
+  "brand": { "@type": "Brand", "name": "Nexum AI" },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://buy.stripe.com/PLACEHOLDER_NEXUM_PRO",
+    "priceCurrency": "EUR",
+    "price": "1500",
+    "priceValidUntil": "2026-05-10",
+    "availability": "https://schema.org/LimitedAvailability",
+    "itemCondition": "https://schema.org/NewCondition"
+  }
+}
+</script>
+
+<style>
+/* =========================
+   TOKENS
+   ========================= */
+:root {
+  --bg-primary: #050005;
+  --bg-secondary: #0A0510;
+  --bg-card: #110820;
+  --bg-card-elevated: #1A0F2E;
+
+  --purple-900: #2D0F4F;
+  --purple-700: #6024AD;
+  --purple-500: #8943E3;
+  --purple-300: #A46BED;
+  --purple-200: #C9A4F7;
+
+  --magenta-500: #F239FF;
+  --magenta-300: #F87BFF;
+
+  --gradient-brand: linear-gradient(135deg, #8943E3 0%, #F239FF 100%);
+  --gradient-brand-soft: linear-gradient(135deg, rgba(137, 67, 227, 0.15) 0%, rgba(242, 57, 255, 0.15) 100%);
+  --gradient-radial: radial-gradient(ellipse at top, rgba(137, 67, 227, 0.25) 0%, transparent 60%);
+
+  --text-primary: #FAFAFA;
+  --text-secondary: #C4B8D6;
+  --text-tertiary: #8A7B9E;
+  --text-muted: #5A4D6B;
+
+  --border-subtle: rgba(196, 184, 214, 0.08);
+  --border-medium: rgba(164, 107, 237, 0.2);
+  --border-strong: rgba(137, 67, 227, 0.4);
+
+  --success: #4ADE80;
+  --warning: #FBBF24;
+  --danger: #EF4444;
+
+  --topbar-height: 44px;
+  --nav-height: 72px;
+  --content-max: 1200px;
+  --section-pad-y: 100px;
+  --section-pad-y-lg: 120px;
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* =========================
+   RESET / BASE
+   ========================= */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  font-feature-settings: "ss01", "cv11";
+  letter-spacing: -0.005em;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: 0; background: transparent; color: inherit; }
+ul { list-style: none; padding: 0; margin: 0; }
+hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
+::selection { background: rgba(242, 57, 255, 0.35); color: #fff; }
+
+/* =========================
+   LAYOUT HELPERS
+   ========================= */
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 60px;
+}
+@media (max-width: 1024px) { .container { padding: 0 40px; } }
+@media (max-width: 767px)  { .container { padding: 0 20px; } }
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--purple-300);
+}
+.eyebrow.is-mag { color: var(--magenta-300); }
+.eyebrow.is-success { color: var(--success); }
+
+.section-head { text-align: center; max-width: 900px; margin: 0 auto; }
+.section-head h2 {
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 14px 0 0;
+}
+.section-head p {
+  margin-top: 16px;
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.brand-text {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.headline-mark {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+.headline-mark::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--gradient-brand);
+  box-shadow: 0 4px 24px rgba(242, 57, 255, 0.45);
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: drawUnderline 1.1s 0.7s var(--ease) forwards;
+}
+@keyframes drawUnderline { to { transform: scaleX(1); } }
+
+.divider { height: 1px; background: var(--border-subtle); margin: 24px 0; border: 0; }
+
+/* =========================
+   TOP BAR (urgencia)
+   ========================= */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  height: var(--topbar-height);
+  background: var(--gradient-brand);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+.topbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.45;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: -1;
+}
+.topbar__inner {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  position: relative;
+}
+.topbar__msg {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  text-align: center;
+  white-space: nowrap;
+}
+.topbar__msg .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #fff; margin: 0 10px; vertical-align: 3px; opacity: 0.6; }
+.topbar__msg .bolt { display: inline-block; transform: translateY(-1px); margin-right: 8px; }
+.topbar__countdown {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.22);
+  padding: 6px 12px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.topbar__countdown span.sep { opacity: 0.55; }
+@media (max-width: 1023px) {
+  .topbar { height: 56px; }
+  .topbar__inner { padding: 0 16px; flex-direction: column; gap: 2px; justify-content: center; }
+  .topbar__msg { white-space: normal; font-size: 12.5px; line-height: 1.25; }
+  .topbar__msg .bolt { display: none; }
+  .topbar__countdown { position: static; transform: none; padding: 2px 10px; font-size: 11.5px; background: rgba(0,0,0,0.28); }
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+.nav {
+  position: sticky;
+  top: var(--topbar-height);
+  z-index: 70;
+  height: var(--nav-height);
+  background: rgba(5, 0, 5, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.nav__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+}
+.nav__logo {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+.footer__logo {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+.nav__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--border-strong);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+  background: rgba(137, 67, 227, 0.06);
+  transition: background 200ms var(--ease), border-color 200ms var(--ease), transform 200ms var(--ease);
+}
+.nav__cta:hover { background: rgba(137, 67, 227, 0.18); border-color: var(--purple-500); transform: translateY(-1px); }
+@media (max-width: 767px) { .nav__cta { display: none; } }
+
+/* =========================
+   HERO
+   ========================= */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  padding: 80px 0 100px;
+  background: var(--bg-primary);
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-radial);
+  pointer-events: none;
+  z-index: -2;
+}
+.hero__grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.55;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse at center top, black 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center top, black 0%, transparent 75%);
+}
+.hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(420px, 1fr);
+  gap: 64px;
+  align-items: center;
+}
+@media (max-width: 1023px) {
+  .hero { padding: 56px 0 72px; min-height: auto; }
+  .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* Hero LEFT */
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(242, 57, 255, 0.1);
+  border: 1px solid rgba(242, 57, 255, 0.3);
+  color: var(--magenta-300);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 100px;
+}
+.hero__eyebrow .pulse {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--magenta-500);
+  box-shadow: 0 0 0 0 rgba(242, 57, 255, 0.6);
+  animation: pulse 1.6s cubic-bezier(0.66, 0, 0.4, 1) infinite;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(242, 57, 255, 0.6); }
+  70%  { box-shadow: 0 0 0 12px rgba(242, 57, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(242, 57, 255, 0); }
+}
+
+.hero h1 {
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin: 24px 0 0;
+}
+.hero h1 .soft { color: var(--text-secondary); }
+.hero__sub {
+  margin: 24px 0 0;
+  font-size: clamp(17px, 1.5vw, 20px);
+  font-weight: 500;
+  line-height: 1.5;
+  color: #E8DFF5;
+  max-width: 540px;
+}
+
+.hero__bullets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 32px;
+  max-width: 540px;
+}
+@media (max-width: 540px) { .hero__bullets { grid-template-columns: 1fr; } }
+.hero__bullet {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.icon-circle {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-brand-soft);
+  border: 1px solid var(--border-medium);
+  color: var(--purple-200);
+}
+.icon-circle svg { width: 14px; height: 14px; }
+.icon-circle.icon-circle-grad {
+  background: var(--gradient-brand);
+  border: 0;
+  color: #fff;
+}
+.icon-circle.icon-circle-grad svg { stroke-width: 3; }
+.topbar__countdown.cd-no-days [data-cd="days"],
+.topbar__countdown.cd-no-days [data-cd="days"] + .sep,
+.topbar__countdown.cd-no-days [data-cd="days"] + .sep + .sep { display: none; }
+
+/* Price block */
+.price-block {
+  margin-top: 40px;
+  max-width: 480px;
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: 16px;
+  padding: 24px;
+  overflow: hidden;
+}
+.price-block__ribbon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gradient-brand);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 6px 12px;
+  border-radius: 100px;
+  box-shadow: 0 6px 20px rgba(242, 57, 255, 0.35);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.price-block__ribbon::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+.price-block__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: end;
+}
+.price-block__label {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.price-block__main {
+  font-size: clamp(48px, 6vw, 72px);
+  font-weight: 900;
+  line-height: 1;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.price-block__strike {
+  font-size: 28px;
+  line-height: 1;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  font-weight: 700;
+}
+.price-block__foot {
+  font-size: 14px;
+  color: var(--text-tertiary);
+  margin-top: 0;
+}
+.price-block__foot strong { color: var(--text-primary); font-weight: 800; }
+
+/* CTAs */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--gradient-brand);
+  color: #fff;
+  font-weight: 800;
+  font-size: 18px;
+  padding: 20px 36px;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(242, 57, 255, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  transition: transform 200ms var(--ease), box-shadow 200ms var(--ease), filter 200ms var(--ease);
+  letter-spacing: 0.005em;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 35%, rgba(255,255,255,0.2) 50%, transparent 65%);
+  transform: translateX(-110%);
+  transition: transform 600ms var(--ease);
+  pointer-events: none;
+}
+.btn-primary:hover { transform: translateY(-2px) scale(1.01); box-shadow: 0 14px 44px rgba(242, 57, 255, 0.5); }
+.btn-primary:hover::after { transform: translateX(110%); }
+.btn-primary:active { transform: translateY(0); }
+.btn-primary--full { width: 100%; }
+.btn-primary--md { font-size: 16px; padding: 16px 24px; border-radius: 12px; }
+.btn-primary--xl {
+  font-size: 20px;
+  padding: 28px 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(242, 57, 255, 0.4), 0 0 0 1px rgba(255,255,255,0.08) inset;
+  animation: breathe 2.6s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% { box-shadow: 0 20px 60px rgba(242, 57, 255, 0.4), 0 0 0 1px rgba(255,255,255,0.08) inset; }
+  50%      { box-shadow: 0 24px 80px rgba(242, 57, 255, 0.6), 0 0 0 1px rgba(255,255,255,0.12) inset; }
+}
+.btn-primary__cta-wrap { margin-top: 24px; max-width: 480px; }
+@media (max-width: 480px) { .btn-primary, .btn-primary--md { width: 100%; } }
+
+.trust-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+.trust-line svg { width: 14px; height: 14px; }
+
+.trust-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+.trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 100px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+}
+.trust-pill svg { width: 14px; height: 14px; color: var(--purple-300); }
+
+/* Hero RIGHT — summary card all-in-one */
+.summary-card {
+  position: relative;
+  background: var(--bg-card-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: 24px;
+  padding: 32px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.summary-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 0%, rgba(137, 67, 227, 0.18) 0%, transparent 55%);
+  z-index: -1;
+  pointer-events: none;
+}
+.summary-card__badge {
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  background: var(--bg-primary);
+  color: var(--magenta-300);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 100px;
+  border: 1px solid var(--border-medium);
+}
+
+/* Internal price block */
+.summary-price {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: 16px;
+  padding: 22px 22px 18px;
+}
+.summary-price .price-block__ribbon {
+  top: 14px;
+  right: 14px;
+  font-size: 10px;
+  padding: 5px 11px;
+}
+.summary-price__row {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 24px;
+  align-items: end;
+  margin-top: 4px;
+}
+.summary-price__label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.summary-price__main {
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.summary-price__strike {
+  font-size: 22px;
+  line-height: 1;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  font-weight: 700;
+}
+.summary-price__foot {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin: 14px 0 0;
+}
+.summary-price__foot strong { color: var(--text-primary); font-weight: 800; }
+
+.summary-cta {
+  margin-top: 18px;
+  font-size: 16px !important;
+  padding: 18px 24px !important;
+  border-radius: 14px !important;
+}
+.summary-trust {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.summary-pills {
+  margin-top: 14px;
+  justify-content: center;
+}
+.summary-pills .trust-pill { font-size: 11px; padding: 6px 12px; }
+.summary-card h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 12px 0 6px;
+  letter-spacing: -0.015em;
+}
+.summary-card__sub {
+  font-size: 14px;
+  color: var(--text-tertiary);
+  margin: 0;
+}
+.summary-card__list { display: flex; flex-direction: column; gap: 6px; }
+.summary-card__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.summary-card__list li .icon-circle { width: 24px; height: 24px; }
+.summary-card__list li .icon-circle svg { width: 14px; height: 14px; }
+
+.summary-bonus__head {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--magenta-300);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.summary-bonus__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.summary-bonus__list li svg { width: 16px; height: 16px; color: var(--magenta-500); flex: 0 0 auto; margin-top: 2px; }
+
+.summary-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.summary-total__label {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  font-weight: 800;
+}
+.summary-total__price {
+  font-size: clamp(36px, 4vw, 48px);
+  font-weight: 900;
+  line-height: 1;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* =========================
+   GENERIC SECTION
+   ========================= */
+.section {
+  padding-top: var(--section-pad-y);
+  padding-bottom: var(--section-pad-y);
+}
+.section--lg { padding-top: var(--section-pad-y-lg); padding-bottom: var(--section-pad-y-lg); }
+.section--alt { background: var(--bg-secondary); }
+@media (max-width: 767px) {
+  .section { padding-top: 64px; padding-bottom: 64px; }
+  .section--lg { padding-top: 80px; padding-bottom: 80px; }
+}
+
+/* =========================
+   "PARA QUIÉN" cards
+   ========================= */
+.audience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 1100px;
+  margin: 56px auto 0;
+}
+@media (max-width: 767px) { .audience-grid { grid-template-columns: 1fr; } }
+.audience-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 28px;
+  transition: border-color 200ms var(--ease), transform 200ms var(--ease), box-shadow 200ms var(--ease);
+}
+.audience-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(137, 67, 227, 0.18);
+}
+.audience-card__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.audience-card__emoji {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  background: var(--gradient-brand-soft);
+  border: 1px solid var(--border-medium);
+  flex: 0 0 auto;
+}
+.audience-card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.audience-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+.audience-foot {
+  text-align: center;
+  margin-top: 48px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border-subtle);
+}
+.audience-foot p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* =========================
+   PILARES
+   ========================= */
+.pillar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 64px;
+}
+@media (max-width: 767px) { .pillar-grid { grid-template-columns: 1fr; } }
+.pillar {
+  position: relative;
+  background: var(--bg-card-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: 20px;
+  padding: 32px;
+  transition: border-color 200ms var(--ease), transform 200ms var(--ease);
+}
+.pillar:hover { border-color: var(--purple-500); transform: translateY(-2px); }
+.pillar__num {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.55;
+  letter-spacing: -0.04em;
+}
+.pillar__title {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 14px 0 4px;
+  letter-spacing: -0.015em;
+}
+.pillar__sub {
+  font-size: 14px;
+  color: var(--purple-300);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+.pillar__quote {
+  background: var(--gradient-brand-soft);
+  border-left: 3px solid var(--purple-500);
+  padding: 16px;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-primary);
+  margin: 16px 0;
+  line-height: 1.5;
+}
+.pillar__list { display: flex; flex-direction: column; gap: 6px; }
+.pillar__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding: 4px 0;
+}
+.pillar__list li svg { width: 14px; height: 14px; color: var(--purple-300); margin-top: 4px; flex: 0 0 auto; }
+
+/* =========================
+   FOUNDERS
+   ========================= */
+.founders-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin: 64px auto 0;
+  max-width: 1000px;
+}
+@media (max-width: 767px) { .founders-grid { grid-template-columns: 1fr; } }
+.founder-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 32px;
+  transition: border-color 200ms var(--ease);
+}
+.founder-card:hover { border-color: var(--border-medium); }
+.founder-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 900;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid var(--border-medium);
+  box-shadow: 0 8px 24px rgba(137, 67, 227, 0.25);
+}
+.founder-avatar img {
+  width: 100%; height: 100%; object-fit: cover;
+  position: absolute; inset: 0;
+}
+.founder-name { font-size: 20px; font-weight: 800; margin: 0 0 4px; letter-spacing: -0.01em; }
+.founder-role { font-size: 14px; color: var(--purple-300); font-weight: 600; margin: 0 0 14px; }
+.founder-bio { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin: 0 0 18px; }
+.founder-stats { display: flex; flex-wrap: wrap; gap: 8px; }
+.stat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  background: var(--bg-card-elevated);
+  border: 1px solid var(--border-subtle);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+}
+.stat-chip svg { width: 12px; height: 12px; color: var(--purple-300); }
+
+/* =========================
+   BONUS
+   ========================= */
+.bonus-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 1100px;
+  margin: 56px auto 0;
+}
+@media (max-width: 767px) { .bonus-grid { grid-template-columns: 1fr; } }
+.bonus-card {
+  position: relative;
+  background: var(--bg-card-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: 16px;
+  padding: 28px;
+  transition: border-color 200ms var(--ease), transform 200ms var(--ease);
+}
+.bonus-card:hover { border-color: var(--magenta-500); transform: translateY(-2px); }
+.bonus-card__icon {
+  width: 56px; height: 56px; border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--gradient-brand-soft);
+  border: 1px solid var(--border-medium);
+  color: var(--purple-200);
+}
+.bonus-card__icon svg { width: 28px; height: 28px; }
+.bonus-card__valor {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(242, 57, 255, 0.1);
+  color: var(--magenta-300);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  border: 1px solid rgba(242, 57, 255, 0.2);
+}
+.bonus-card__valor.is-limited {
+  background: rgba(242, 57, 255, 0.18);
+  border-color: rgba(242, 57, 255, 0.4);
+  color: #fff;
+}
+.bonus-card h3 { font-size: 18px; font-weight: 800; margin: 16px 0 8px; letter-spacing: -0.01em; }
+.bonus-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.55; margin: 0; }
+
+.bonus-total {
+  margin: 48px auto 0;
+  max-width: 800px;
+  background: var(--gradient-brand-soft);
+  border: 1px solid var(--border-strong);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+}
+.bonus-total__label {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--purple-300);
+  display: block;
+}
+.bonus-total__num {
+  font-size: clamp(44px, 6vw, 56px);
+  font-weight: 900;
+  line-height: 1;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 12px 0 8px;
+  letter-spacing: -0.02em;
+}
+.bonus-total__foot {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* =========================
+   GARANTÍA
+   ========================= */
+.guarantee-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+}
+@media (max-width: 1023px) { .guarantee-grid { grid-template-columns: 1fr; gap: 32px; } }
+.guarantee-text h2 {
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 14px 0 24px;
+}
+.guarantee-text h2 .ok { color: var(--success); }
+.guarantee-text p {
+  margin: 16px 0 0;
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.guarantee-card {
+  background: var(--bg-card-elevated);
+  border: 2px solid var(--success);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 14px 50px rgba(74, 222, 128, 0.12);
+}
+.guarantee-card__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(74, 222, 128, 0.12);
+  color: var(--success);
+  margin-bottom: 18px;
+}
+.guarantee-card__icon svg { width: 36px; height: 36px; }
+.guarantee-card h3 { font-size: 20px; font-weight: 800; margin: 0 0 18px; letter-spacing: -0.01em; }
+.guarantee-points { display: flex; flex-direction: column; gap: 16px; }
+.guarantee-points li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+.guarantee-points .num {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--success);
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+.guarantee-points h4 { font-size: 16px; font-weight: 700; margin: 0 0 4px; letter-spacing: -0.005em; }
+.guarantee-points p { margin: 0; font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+
+/* =========================
+   COMPARATIVA
+   ========================= */
+.compare {
+  margin: 48px auto 0;
+  max-width: 900px;
+}
+.compare__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+.compare__cell {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 14.5px;
+  color: var(--text-secondary);
+}
+.compare__cell--label { font-weight: 600; color: var(--text-primary); }
+.compare__cell--pro {
+  background: rgba(137, 67, 227, 0.04);
+}
+.compare__head .compare__cell {
+  border-bottom: 1px solid var(--border-medium);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 18px 20px;
+  color: var(--text-tertiary);
+}
+.compare__head .compare__cell--pro {
+  border-top: 2px solid var(--purple-500);
+  background: rgba(137, 67, 227, 0.1);
+  color: var(--text-primary);
+  border-radius: 12px 12px 0 0;
+}
+.compare__cell--pro.is-final { border-radius: 0 0 12px 12px; padding-bottom: 24px; }
+.compare__check { display: inline-flex; align-items: center; gap: 8px; }
+.compare__check svg { width: 16px; height: 16px; color: var(--success); flex: 0 0 auto; }
+.compare__dash { color: var(--text-muted); font-weight: 600; }
+.compare__price-pro {
+  font-size: 18px;
+  font-weight: 900;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.01em;
+}
+.compare__price-free { font-weight: 700; color: var(--text-secondary); }
+
+/* Compare mobile cards */
+.compare-mobile { display: none; }
+@media (max-width: 767px) {
+  .compare { display: none; }
+  .compare-mobile { display: grid; gap: 16px; margin: 48px auto 0; max-width: 600px; }
+  .compare-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .compare-card.is-pro { border: 1px solid var(--border-strong); border-top: 2px solid var(--purple-500); }
+  .compare-card__head {
+    padding: 18px 20px;
+    background: rgba(137, 67, 227, 0.04);
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--text-tertiary);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .compare-card.is-pro .compare-card__head { background: rgba(137, 67, 227, 0.1); color: var(--text-primary); }
+  .compare-card__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 14px;
+  }
+  .compare-card__row:last-child { border-bottom: 0; }
+  .compare-card__label { color: var(--text-secondary); }
+  .compare-card__val { color: var(--text-primary); font-weight: 600; text-align: right; }
+}
+
+/* =========================
+   TRUST STATS (reemplaza testimonios)
+   ========================= */
+.trust-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 56px auto 0;
+  max-width: 1100px;
+}
+@media (max-width: 1023px) { .trust-stats { grid-template-columns: 1fr 1fr; gap: 16px; } }
+@media (max-width: 540px)  { .trust-stats { grid-template-columns: 1fr; } }
+.trust-stat {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 40px 24px;
+  text-align: center;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  transition: border-color 200ms var(--ease), transform 200ms var(--ease);
+}
+.trust-stat::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top, rgba(137, 67, 227, 0.18) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 250ms var(--ease);
+  z-index: -1;
+}
+.trust-stat:hover { border-color: var(--border-medium); transform: translateY(-3px); }
+.trust-stat:hover::before { opacity: 1; }
+.trust-stat__num {
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 16px;
+  text-align: center;
+  width: 100%;
+}
+.trust-stat__label {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  text-align: center;
+  width: 100%;
+}
+
+.logos-band {
+  margin-top: 64px;
+  text-align: center;
+}
+.logos-band__head {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+.logos-band__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px 48px;
+  margin-top: 24px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-tertiary);
+  opacity: 0.75;
+  letter-spacing: 0.005em;
+}
+.logos-band__list span { white-space: nowrap; }
+@media (max-width: 600px) { .logos-band__list { gap: 18px 24px; font-size: 15px; } }
+
+/* =========================
+   FAQ
+   ========================= */
+.faq {
+  max-width: 800px;
+  margin: 48px auto 0;
+}
+.faq__item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.faq__item.is-open { border-color: var(--border-medium); }
+.faq__head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: left;
+}
+.faq__head .toggle {
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--gradient-brand-soft);
+  border: 1px solid var(--border-medium);
+  color: var(--purple-200);
+  flex: 0 0 auto;
+  transition: transform 300ms var(--ease), background 200ms var(--ease);
+}
+.faq__head .toggle svg { width: 14px; height: 14px; transition: transform 300ms var(--ease); }
+.faq__item.is-open .toggle svg { transform: rotate(45deg); }
+.faq__item.is-open .toggle { background: var(--gradient-brand); color: #fff; border-color: transparent; }
+.faq__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 350ms var(--ease);
+}
+.faq__body-inner {
+  padding: 0 24px 24px;
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* =========================
+   CHECKOUT FINAL
+   ========================= */
+.checkout-final {
+  position: relative;
+  background: var(--bg-primary);
+  isolation: isolate;
+  overflow: hidden;
+}
+.checkout-final::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top, rgba(242, 57, 255, 0.18) 0%, transparent 60%);
+  z-index: -1;
+}
+.checkout-final__inner { max-width: 720px; margin: 0 auto; text-align: center; }
+.checkout-final h2 {
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 14px 0 24px;
+}
+.checkout-final p.lead {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.final-summary {
+  margin: 48px 0 0;
+  background: var(--bg-card-elevated);
+  border: 2px solid var(--border-strong);
+  border-radius: 24px;
+  padding: 40px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+.final-summary::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 24px;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(137,67,227,0.4), rgba(242,57,255,0.4));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.6;
+}
+@media (max-width: 600px) { .final-summary { padding: 28px; } }
+.final-summary__head {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--text-tertiary);
+}
+.final-summary__price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin: 14px 0 6px;
+  flex-wrap: wrap;
+}
+.final-summary__price {
+  font-size: clamp(54px, 8vw, 72px);
+  font-weight: 900;
+  line-height: 1;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.03em;
+}
+.final-summary__strike { font-size: 32px; line-height: 1; color: var(--text-muted); text-decoration: line-through; font-weight: 700; }
+.final-summary__caption { font-size: 14px; color: var(--text-tertiary); margin: 0; }
+.final-summary__list { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
+@media (max-width: 600px) { .final-summary__list { grid-template-columns: 1fr; } }
+.final-summary__list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px; color: var(--text-secondary); padding: 6px 0; line-height: 1.5;
+}
+.final-summary__list li svg { width: 14px; height: 14px; color: var(--success); margin-top: 4px; flex: 0 0 auto; }
+
+.cards-row {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  margin-top: 16px; opacity: 0.85; flex-wrap: wrap;
+}
+.cards-row svg { height: 22px; width: auto; }
+
+.closer {
+  margin-top: 48px;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--text-tertiary);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.55;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+.footer {
+  background: var(--bg-secondary);
+  padding: 56px 0 32px;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+}
+.footer__brand-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.footer__brand-wrap .footer__logo { height: 40px; }
+.footer__brand-wrap p {
+  font-size: 14px;
+  color: var(--text-tertiary);
+  line-height: 1.6;
+  margin: 0;
+}
+.footer__bottom {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+.footer__bottom .right { display: inline-flex; align-items: center; gap: 6px; }
+.footer__bottom svg { width: 12px; height: 12px; }
+
+/* =========================
+   STICKY MOBILE BAR
+   ========================= */
+.mobile-bar {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 72px;
+  background: rgba(5, 0, 5, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border-medium);
+  z-index: 90;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  transform: translateY(110%);
+  transition: transform 350ms var(--ease);
+}
+.mobile-bar.is-visible { transform: translateY(0); }
+.mobile-bar__price {
+  display: flex; flex-direction: column;
+  line-height: 1.05;
+}
+.mobile-bar__price strong {
+  font-weight: 900;
+  font-size: 22px;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.01em;
+}
+.mobile-bar__price span { font-size: 11px; color: var(--text-tertiary); margin-top: 2px; }
+.mobile-bar__btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gradient-brand);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 14px;
+  box-shadow: 0 6px 20px rgba(242, 57, 255, 0.4);
+}
+@media (max-width: 767px) {
+  .mobile-bar { display: flex; }
+  body { padding-bottom: 80px; }
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out var(--delay, 0ms), transform 0.7s ease-out var(--delay, 0ms);
+  will-change: opacity, transform;
+}
+.fade-in-up.visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+  .fade-in-up { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* =========================
+   CONIC RING (CTA principal/xl)
+   ========================= */
+@property --conic-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+.btn-primary--xl { position: relative; isolation: isolate; }
+.btn-primary--xl::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--conic-angle, 0deg),
+    #6024AD 0%, #8943E3 25%, #F239FF 50%, #8943E3 75%, #6024AD 100%);
+  animation: spinConic 5s linear infinite;
+  filter: blur(10px);
+  opacity: 0.55;
+  z-index: -1;
+}
+@keyframes spinConic { to { --conic-angle: 360deg; } }
+@supports not (background: conic-gradient(from 0deg, red, blue)) {
+  .btn-primary--xl::before { display: none; }
+}
+
+/* CTA hero también con conic glow más sutil */
+.btn-primary--hero-xl::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--conic-angle, 0deg),
+    #8943E3, #F239FF, #A46BED, #F239FF, #8943E3);
+  animation: spinConic 5s linear infinite;
+  filter: blur(6px);
+  opacity: 0.55;
+  z-index: -1;
+}
+.btn-primary--hero-xl { position: relative; isolation: isolate; }
+
+/* =========================
+   HERO GRID — luz que recorre
+   ========================= */
+.hero__grid-bg .gcell {
+  --base-op: 0.06;
+  --peak-op: 0.55;
+  fill-opacity: var(--base-op);
+  animation: gShimmer var(--dur, 5s) ease-in-out infinite;
+  animation-delay: var(--del, 0s);
+}
+@keyframes gShimmer {
+  0%, 100% { fill-opacity: var(--base-op); }
+  50%      { fill-opacity: var(--peak-op); }
+}
+/* Solo las celdas hot tienen el drop-shadow caro (limitar pintado) */
+.hero__grid-bg .gcell.is-hot {
+  --peak-op: 0.85;
+  animation: gShimmerHot var(--dur, 4.5s) ease-in-out infinite;
+  animation-delay: var(--del, 0s);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes gShimmerHot {
+  0%, 100% { fill-opacity: var(--base-op); filter: none; }
+  50%      { fill-opacity: var(--peak-op); filter: drop-shadow(0 0 3px rgba(242, 57, 255, 0.6)); }
+}
+
+/* Sweep diagonal — GPU transform, sin mix-blend-mode (jankea durante scroll).
+   Dos bandas pre-mezcladas a 25% y 75% del elemento de 200% width.
+   El wrap -50% → 0% es invisible (banda 2 cae donde estaba banda 1). */
+.hero__sweep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(115deg,
+    transparent 0%,    transparent 16%,
+    rgba(164, 107, 237, 0.18) 23%,
+    rgba(242, 57, 255, 0.30) 25%,
+    rgba(164, 107, 237, 0.18) 27%,
+    transparent 34%,   transparent 66%,
+    rgba(164, 107, 237, 0.18) 73%,
+    rgba(242, 57, 255, 0.30) 75%,
+    rgba(164, 107, 237, 0.18) 77%,
+    transparent 84%,   transparent 100%);
+  opacity: 1;
+  animation: sweep 12s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+@keyframes sweep {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+/* Forzar la grilla a su propia capa GPU para que no rePinte durante scroll */
+.hero__grid-bg {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* =========================
+   FOUNDERS — card unificada
+   ========================= */
+.founders-unit {
+  position: relative;
+  max-width: 880px;
+  margin: 56px auto 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 28px;
+  padding: 56px 48px;
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+.founders-unit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 25% 20%, rgba(137, 67, 227, 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 90%, rgba(242, 57, 255, 0.18) 0%, transparent 55%);
+  z-index: -1;
+  pointer-events: none;
+}
+.founders-unit__avatars {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  position: relative;
+}
+.founders-unit__avatars .founder-avatar {
+  width: 112px;
+  height: 112px;
+  margin: 0;
+  border: 3px solid var(--bg-card);
+  box-shadow: 0 12px 36px rgba(137, 67, 227, 0.4);
+  transition: transform 350ms var(--ease);
+}
+.founders-unit__avatars .founder-avatar + .founder-avatar { margin-left: -32px; }
+.founders-unit:hover .founders-unit__avatars .founder-avatar:first-child { transform: translateX(-6px) rotate(-3deg); }
+.founders-unit:hover .founders-unit__avatars .founder-avatar:last-child { transform: translateX(6px) rotate(3deg); }
+.founders-unit__name {
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+}
+.founders-unit__name .amp {
+  font-family: 'Inter', serif;
+  font-weight: 400;
+  font-style: italic;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0 8px;
+}
+.founders-unit__role {
+  font-size: 14px;
+  color: var(--purple-300);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 24px;
+}
+.founders-unit__bio {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0 auto 28px;
+}
+.founders-unit__bio strong { color: var(--text-primary); font-weight: 700; }
+.founders-unit__stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+@media (max-width: 600px) {
+  .founders-unit { padding: 40px 24px; }
+  .founders-unit__avatars .founder-avatar { width: 88px; height: 88px; }
+}
+
+/* =========================
+   AUDIENCE CARDS — más impacto
+   ========================= */
+.audience-card { position: relative; isolation: isolate; }
+.audience-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(137, 67, 227, 0.12) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 250ms var(--ease);
+  z-index: -1;
+  pointer-events: none;
+}
+.audience-card:hover::before { opacity: 1; }
+.audience-card__emoji {
+  position: relative;
+  filter: saturate(1.1);
+  transition: transform 250ms var(--ease);
+}
+.audience-card:hover .audience-card__emoji { transform: scale(1.05) rotate(-4deg); }
+
+/* =========================
+   PILLAR — más impacto
+   ========================= */
+.pillar { isolation: isolate; overflow: hidden; }
+.pillar::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(242, 57, 255, 0.15) 0%, transparent 60%);
+  filter: blur(40px);
+  opacity: 0;
+  transition: opacity 350ms var(--ease);
+  z-index: -1;
+  pointer-events: none;
+}
+.pillar:hover::after { opacity: 1; }
+.pillar__num {
+  text-shadow: 0 0 24px rgba(242, 57, 255, 0.25);
+}
+
+/* =========================
+   MARQUEE LOGOS
+   ========================= */
+.marquee-wrap {
+  margin-top: 24px;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+  padding-right: 56px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-tertiary);
+  opacity: 0.75;
+  letter-spacing: 0.005em;
+  white-space: nowrap;
+}
+.marquee-track span { display: inline-flex; align-items: center; gap: 8px; }
+.marquee-track span::before {
+  content: "";
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--purple-500);
+  opacity: 0.55;
+}
+.marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+@media (max-width: 600px) { .marquee-track { font-size: 15px; gap: 36px; } }
+
+/* =========================
+   COUNTDOWN — micro flip
+   ========================= */
+.topbar__countdown [data-cd] {
+  display: inline-block;
+  min-width: 1.5ch;
+  text-align: center;
+  transition: transform 200ms var(--ease), color 200ms var(--ease);
+}
+.topbar__countdown [data-cd].is-flip {
+  transform: translateY(-2px) scale(1.08);
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+/* =========================
+   FAQ — borde gradient on open
+   ========================= */
+.faq__item.is-open {
+  border-color: transparent;
+  background:
+    linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+    linear-gradient(135deg, rgba(137, 67, 227, 0.5), rgba(242, 57, 255, 0.5)) border-box;
+  border: 1px solid transparent;
+}
+
+/* =========================
+   SUMMARY CARD — footer mínimo
+   ========================= */
+.summary-card__foot {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.summary-card__foot .arrow-down {
+  display: block;
+  margin: 8px auto 0;
+  width: 18px;
+  height: 18px;
+  color: var(--purple-300);
+  animation: arrowBounce 1.6s ease-in-out infinite;
+}
+@keyframes arrowBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50%      { transform: translateY(4px); opacity: 1; }
+}
+@media (min-width: 1024px) {
+  .summary-card__foot .arrow-down { transform: rotate(-90deg); animation-name: arrowBounceLeft; }
+  @keyframes arrowBounceLeft {
+    0%, 100% { transform: rotate(-90deg) translateX(0); opacity: 0.6; }
+    50%      { transform: rotate(-90deg) translateX(4px); opacity: 1; }
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ====================================================
+     1. TOP BAR DE URGENCIA
+     ==================================================== -->
+<div class="topbar" id="topbar">
+  <div class="topbar__inner">
+    <p class="topbar__msg">
+      <span class="bolt">⚡</span>
+      <strong>PRECIO FUNDADORES €1,500</strong>
+      <span class="dot"></span> sube a €2,000 el lunes 11
+      <span class="dot"></span> cierra domingo 10 · 23:59h
+    </p>
+    <div class="topbar__countdown" id="topbar-countdown" aria-live="polite">
+      <span data-cd="days">02</span><span class="sep">d</span>
+      <span class="sep">:</span>
+      <span data-cd="hours">14</span><span class="sep">h</span>
+      <span class="sep">:</span>
+      <span data-cd="minutes">33</span><span class="sep">m</span>
+      <span class="sep">:</span>
+      <span data-cd="seconds">12</span><span class="sep">s</span>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================
+     2. NAVBAR
+     ==================================================== -->
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="#" class="nav__brand" aria-label="Nexum AI">
+      <img src="assets/logo-nexum-ai.svg" alt="Nexum AI" class="nav__logo" />
+    </a>
+    <a href="#checkout-final" class="nav__cta" data-track="click_nav">
+      Reservar mi plaza →
+    </a>
+  </div>
+</header>
+
+<!-- ====================================================
+     3. HERO
+     ==================================================== -->
+<section class="hero">
+  <svg class="hero__grid-bg" id="hero-grid" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <div class="hero__sweep" aria-hidden="true"></div>
+
+  <div class="container hero__inner">
+    <!-- LEFT — solo copy persuasivo -->
+    <div class="hero__left">
+      <span class="hero__eyebrow fade-in-up" data-delay="0">
+        <span class="pulse"></span> PRECIO FUNDADORES · 50 PLAZAS
+      </span>
+
+      <h1 class="fade-in-up" data-delay="100">
+        De cero a <span class="brand-text headline-mark">€5,000/mes</span> con IA<br>
+        <span class="soft">en 90 días.</span>
+      </h1>
+
+      <p class="hero__sub fade-in-up" data-delay="200">
+        El sistema completo para construir tu agencia de IA. Habilidades, soluciones listas para vender, comunidad y red activa. Sin código. Sin jefe. Desde cualquier parte.
+      </p>
+
+      <ul class="hero__bullets fade-in-up" data-delay="300">
+        <li class="hero__bullet"><span class="icon-circle"><i data-lucide="check-circle"></i></span> Acceso de por vida a +30 videos</li>
+        <li class="hero__bullet"><span class="icon-circle"><i data-lucide="users"></i></span> 3 mentorías semanales por 3 meses</li>
+        <li class="hero__bullet"><span class="icon-circle"><i data-lucide="package"></i></span> +7 soluciones IA listas para vender</li>
+        <li class="hero__bullet"><span class="icon-circle"><i data-lucide="shield"></i></span> Garantía de resultado a 90 días</li>
+      </ul>
+    </div>
+
+    <!-- RIGHT — bloque all-in-one: items + bonus + precio + CTA + trust -->
+    <aside class="summary-card fade-in-up" data-delay="200">
+      <span class="summary-card__badge">INVERSIÓN HOY</span>
+      <h2>Acceso completo a Nexum Academy Pro™</h2>
+      <p class="summary-card__sub">Todo incluido · 50 plazas totales · pago único</p>
+
+      <hr class="divider" />
+
+      <ul class="summary-card__list">
+        <li><span class="icon-circle icon-circle-grad"><i data-lucide="check"></i></span> Formación completa — +30 videos · acceso de por vida</li>
+        <li><span class="icon-circle icon-circle-grad"><i data-lucide="check"></i></span> +7 soluciones IA listas para vender · ticket €500–€3,000</li>
+        <li><span class="icon-circle icon-circle-grad"><i data-lucide="check"></i></span> 3 mentorías semanales en vivo · 3 meses</li>
+        <li><span class="icon-circle icon-circle-grad"><i data-lucide="check"></i></span> Bolsa de trabajo exclusiva VIP</li>
+        <li><span class="icon-circle icon-circle-grad"><i data-lucide="check"></i></span> Comunidad de +50 founders en acción</li>
+        <li><span class="icon-circle icon-circle-grad"><i data-lucide="check"></i></span> Masterclass mensual con referentes de la industria</li>
+      </ul>
+
+      <hr class="divider" />
+
+      <div class="summary-bonus">
+        <span class="summary-bonus__head">BONUS DE ACCIÓN RÁPIDA</span>
+        <ul class="summary-bonus__list">
+          <li><i data-lucide="zap"></i> Solución AUTOSETTER (sistema setter automatizado)</li>
+          <li><i data-lucide="zap"></i> WhatsApp directo con los founders · 3 meses</li>
+          <li><i data-lucide="zap"></i> 3 meses extra de mentorías (de 3 a 6 meses)</li>
+        </ul>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- PRICE BLOCK INTERNO -->
+      <div class="summary-price">
+        <span class="price-block__ribbon">AHORRÁS €6,565</span>
+        <div class="summary-price__row">
+          <div>
+            <div class="summary-price__label">Precio fundadores · hoy</div>
+            <div class="summary-price__main">€1,500</div>
+          </div>
+          <div>
+            <div class="summary-price__label">Lunes 11</div>
+            <div class="summary-price__strike">€2,000</div>
+          </div>
+        </div>
+        <p class="summary-price__foot">valor total percibido: <strong>€8,065</strong> · pago único</p>
+      </div>
+
+      <!-- CTA único -->
+      <a href="#" class="btn-primary btn-primary--hero-xl btn-primary--full summary-cta" data-stripe data-track="click_checkout_hero">
+        RESERVAR MI PLAZA · €1,500 →
+      </a>
+
+      <div class="trust-line summary-trust">
+        <i data-lucide="lock"></i>
+        Pago 100% seguro vía Stripe · SSL encriptado · Acceso inmediato
+      </div>
+
+      <div class="trust-pills summary-pills">
+        <span class="trust-pill"><i data-lucide="shield-check"></i> Garantía 90 días</span>
+        <span class="trust-pill"><i data-lucide="users"></i> +50 empresas confían</span>
+        <span class="trust-pill"><i data-lucide="users-round"></i> 50 plazas totales</span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ====================================================
+     4. PARA QUIÉN ES ESTO
+     ==================================================== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head fade-in-up">
+      <span class="eyebrow">¿ESTO ES PARA VOS?</span>
+      <h2>Si te ves aquí,<br>Nexum Academy Pro™ está hecho para ti.</h2>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card fade-in-up" data-delay="0">
+        <div class="audience-card__head">
+          <div class="audience-card__emoji">😶‍🌫️</div>
+          <h3>Empleado atrapado</h3>
+        </div>
+        <p>Sueldo que no alcanza. Trabajo que no te representa. Y la IA cambiando todo mientras tú sigues ahí. Quieres salida real — no otro humo como el dropshipping.</p>
+      </div>
+      <div class="audience-card fade-in-up" data-delay="100">
+        <div class="audience-card__head">
+          <div class="audience-card__emoji">🌀</div>
+          <h3>Emprendedor frustrado</h3>
+        </div>
+        <p>Probaste todo: dropshipping, crypto, marketing. Nada funcionó. Estás cansado de empezar de cero. Quieres algo serio — B2B, ticket alto, casos reales detrás.</p>
+      </div>
+      <div class="audience-card fade-in-up" data-delay="200">
+        <div class="audience-card__head">
+          <div class="audience-card__emoji">⚡</div>
+          <h3>Freelance / marketer</h3>
+        </div>
+        <p>Ya facturas €1–3K/mes pero te estancaste. Cambias horas por euros. Quieres ofrecer IA como servicio premium, subir tickets y dejar de pelear por centavos.</p>
+      </div>
+      <div class="audience-card fade-in-up" data-delay="300">
+        <div class="audience-card__head">
+          <div class="audience-card__emoji">🧱</div>
+          <h3>Profesional de sector tradicional</h3>
+        </div>
+        <p>Inmobiliaria. Broker. Seguros. Servicios locales. La IA está cambiando todo y quieres diferenciarte antes que tu competencia. Lo único que te frena es no saber código.</p>
+      </div>
+    </div>
+    <div class="audience-foot fade-in-up">
+      <p>Te viste arriba. Deja de pensarlo. <strong style="color:var(--text-primary);">50 plazas.</strong> El lunes el precio sube.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     5. LOS 4 PILARES
+     ==================================================== -->
+<section class="section section--lg section--alt">
+  <div class="container">
+    <div class="section-head fade-in-up">
+      <span class="eyebrow">LA ANATOMÍA DEL SISTEMA</span>
+      <h2>4 pilares.<br>De cero a tu agencia funcionando.</h2>
+      <p>Cada uno elimina una excusa. Cuando los cuatro están, no queda excusa — solo decisión.</p>
+    </div>
+
+    <div class="pillar-grid">
+      <article class="pillar fade-in-up" data-delay="0">
+        <div class="pillar__num">01</div>
+        <h3 class="pillar__title">Las habilidades</h3>
+        <div class="pillar__sub">7 módulos progresivos · de mentalidad a delivery</div>
+        <blockquote class="pillar__quote">"Sabes qué hacer, en qué orden y por qué. Día 1 hasta tu primera agencia funcionando."</blockquote>
+        <ul class="pillar__list">
+          <li><i data-lucide="check"></i> Módulo 1: Mentalidad y modelo mental (4 videos)</li>
+          <li><i data-lucide="check"></i> Módulo 2: Arquitectura de soluciones (4 videos)</li>
+          <li><i data-lucide="check"></i> Módulo 3: Técnico — n8n + Claude Code + RAG (8 videos)</li>
+          <li><i data-lucide="check"></i> Módulo 3B: Datos y CRM — Airtable + Kommo (8 videos)</li>
+          <li><i data-lucide="check"></i> Módulo 4: Venta, oferta y cierre (5 videos)</li>
+          <li><i data-lucide="check"></i> Módulo 5: Prospección y primeros clientes (5 videos)</li>
+          <li><i data-lucide="check"></i> Módulo 6: Delivery, retención y escala (5 videos)</li>
+        </ul>
+      </article>
+
+      <article class="pillar fade-in-up" data-delay="100">
+        <div class="pillar__num">02</div>
+        <h3 class="pillar__title">Soluciones IA listas para vender</h3>
+        <div class="pillar__sub">7 productos de IA · listos para implementar y cobrar desde el día 1</div>
+        <blockquote class="pillar__quote">"No arrancas de cero con cada cliente. Los productos ya están construidos. Los presentas, los adaptas, los entregas."</blockquote>
+        <ul class="pillar__list">
+          <li><i data-lucide="check"></i> Sistema Multi-Agentes (n8n) — ticket €1,500–€3,000</li>
+          <li><i data-lucide="check"></i> Sistema de Seguimientos (n8n) — recurrente mensual</li>
+          <li><i data-lucide="check"></i> Agente IA para reservas (n8n) — €700+</li>
+          <li><i data-lucide="check"></i> Sistema Analizador de pagos (n8n) — €500+</li>
+          <li><i data-lucide="check"></i> Agente de Voz completo (Retell AI) — €1,500–€3,000</li>
+          <li><i data-lucide="check"></i> CRM + automatizaciones (Airtable) — €800+</li>
+          <li><i data-lucide="check"></i> Content OS (Claude Code) — €700+ recurrente</li>
+        </ul>
+      </article>
+
+      <article class="pillar fade-in-up" data-delay="200">
+        <div class="pillar__num">03</div>
+        <h3 class="pillar__title">La comunidad</h3>
+        <div class="pillar__sub">3 mentorías semanales · soporte técnico y de negocio · wins reales</div>
+        <blockquote class="pillar__quote">"Nunca te trabas solo. Alguien ya resolvió tu problema exacto. Y está disponible esta semana."</blockquote>
+        <ul class="pillar__list">
+          <li><i data-lucide="check"></i> Mentoría técnica semanal · 12 sesiones</li>
+          <li><i data-lucide="check"></i> Mentoría de negocio semanal · 12 sesiones</li>
+          <li><i data-lucide="check"></i> Mentoría Q&amp;A / Mentalidad · 12 sesiones</li>
+          <li><i data-lucide="check"></i> Masterclass mensual con referentes</li>
+          <li><i data-lucide="check"></i> Canal técnico en Skool con respuesta en 24h</li>
+          <li><i data-lucide="check"></i> Canal de wins (prueba social viva)</li>
+        </ul>
+      </article>
+
+      <article class="pillar fade-in-up" data-delay="300">
+        <div class="pillar__num">04</div>
+        <h3 class="pillar__title">Las oportunidades</h3>
+        <div class="pillar__sub">Bolsa de trabajo · red activa · proyectos reales</div>
+        <blockquote class="pillar__quote">"No sales a buscar clientes desde cero. Nexum y la comunidad te traen las oportunidades."</blockquote>
+        <ul class="pillar__list">
+          <li><i data-lucide="check"></i> Bolsa de trabajo exclusiva VIP</li>
+          <li><i data-lucide="check"></i> Proyectos derivados directamente por Nexum</li>
+          <li><i data-lucide="check"></i> Red de miembros activos con clientes reales</li>
+          <li><i data-lucide="check"></i> Masterclasses de industria (Pablo, Carlos y otros)</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     6. FOUNDERS
+     ==================================================== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head fade-in-up">
+      <span class="eyebrow">QUIÉNES TE VAN A ACOMPAÑAR</span>
+      <h2 style="font-size: clamp(26px, 3vw, 38px); line-height: 1.2;">Olvídate del curso grabado.<br>Aprendes de quienes ya construyeron la agencia.</h2>
+    </div>
+
+    <article class="founders-unit fade-in-up" data-delay="100">
+      <div class="founders-unit__avatars">
+        <div class="founder-avatar"><img src="assets/founder-jp.png" alt="Juan" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'J'}));this.style.display='none'" /></div>
+        <div class="founder-avatar"><img src="assets/founder-agus.png" alt="Agus" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'A'}));this.style.display='none'" /></div>
+      </div>
+      <h3 class="founders-unit__name">Juan <span class="amp">&amp;</span> Agus</h3>
+      <p class="founders-unit__role">Co-founders · Nexum AI</p>
+      <p class="founders-unit__bio">
+        Construimos Nexum AI desde Uruguay. <strong>Agus</strong> lidera el lado comercial — venta, copy, prospección, posicionamiento. Lo que cierra la oferta. <strong>Juan</strong> lidera el lado técnico — los sistemas de IA en producción para empresas reales: multi-agentes, agentes de voz, CRMs automatizados. El código que factura. 90 días contigo: te enseñamos a vender, construimos a tu lado, respondemos por WhatsApp.
+      </p>
+      <div class="founders-unit__stats">
+        <span class="stat-chip"><i data-lucide="building-2"></i> +50 empresas</span>
+        <span class="stat-chip"><i data-lucide="globe"></i> LATAM + España</span>
+        <span class="stat-chip"><i data-lucide="calendar"></i> +4 años construyendo</span>
+        <span class="stat-chip"><i data-lucide="workflow"></i> Sales · Tech · Producto</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ====================================================
+     7. BONUS DE ACCIÓN RÁPIDA
+     ==================================================== -->
+<section class="section section--lg section--alt">
+  <div class="container">
+    <div class="section-head fade-in-up">
+      <span class="eyebrow is-mag">BONUS POR DECIDIR HOY</span>
+      <h2 style="font-size: clamp(26px, 3vw, 38px);">Compras hoy. Te llevas 4 bonus<br>que valen más que el programa entero.</h2>
+      <p>Premio para los que deciden hoy. Si entras cuando el precio sube a €2,000, no están más.</p>
+    </div>
+
+    <div class="bonus-grid">
+      <article class="bonus-card fade-in-up" data-delay="0">
+        <span class="bonus-card__valor">VALOR €497</span>
+        <div class="bonus-card__icon"><i data-lucide="bot"></i></div>
+        <h3>Solución AUTOSETTER</h3>
+        <p>Agenda llamadas con prospectos sin intervención manual. Funciona mientras duermes.</p>
+      </article>
+      <article class="bonus-card fade-in-up" data-delay="100">
+        <span class="bonus-card__valor">VALOR €997</span>
+        <div class="bonus-card__icon"><i data-lucide="message-circle"></i></div>
+        <h3>WhatsApp directo con los founders</h3>
+        <p>3 meses de acceso prioritario a Agus y Juan por WhatsApp. Preguntas, respondemos. Sin tickets. Sin filas.</p>
+      </article>
+      <article class="bonus-card fade-in-up" data-delay="200">
+        <span class="bonus-card__valor">VALOR €891</span>
+        <div class="bonus-card__icon"><i data-lucide="calendar"></i></div>
+        <h3>3 meses extra de acompañamiento</h3>
+        <p>Las mentorías semanales pasan de 3 a 6 meses. Doble de tiempo. Doble de resultado.</p>
+      </article>
+      <article class="bonus-card fade-in-up" data-delay="300">
+        <span class="bonus-card__valor is-limited">VALOR €297 · SOLO 10 PLAZAS</span>
+        <div class="bonus-card__icon"><i data-lucide="phone"></i></div>
+        <h3>Llamada 1:1 con Agus o Juan</h3>
+        <p>Sesión de estrategia personalizada. Análisis + next steps para tus primeros 30 días. Solo para los primeros 10 que compren hoy.</p>
+      </article>
+    </div>
+
+    <div class="bonus-total fade-in-up">
+      <span class="bonus-total__label">VALOR TOTAL DE BONUS</span>
+      <div class="bonus-total__num">€2,682</div>
+      <p class="bonus-total__foot">incluidos sin costo si compras antes del domingo 10 · 23:59h</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     8. GARANTÍA
+     ==================================================== -->
+<section class="section section--lg">
+  <div class="container">
+    <div class="guarantee-grid">
+      <div class="guarantee-text fade-in-up">
+        <span class="eyebrow is-success">GARANTÍA DE RESULTADO · 90 DÍAS</span>
+        <h2>Haz el trabajo. Si en 90 días no recuperas tu inversión, <span class="ok">no te abandonamos.</span></h2>
+        <p>"La mayoría te da 30 días para pedir reembolso. Nosotros no te devolvemos el dinero. Te devolvemos algo más valioso: nuestro tiempo, nuestras mentorías, nuestro acompañamiento. Sin límite. Hasta que el resultado esté en tu mano."</p>
+        <p>"No es red de seguridad para los que dudan. Es declaración de confianza absoluta — en el sistema y en ti. Haz el trabajo, el resultado llega. Si no llega en 90 días, seguimos hasta que llegue."</p>
+      </div>
+      <div class="guarantee-card fade-in-up" data-delay="100">
+        <div class="guarantee-card__icon"><i data-lucide="shield-check"></i></div>
+        <h3>Por qué esta garantía es más poderosa que un reembolso</h3>
+        <ol class="guarantee-points">
+          <li>
+            <span class="num">01</span>
+            <div>
+              <h4>Te damos el resultado, no el dinero</h4>
+              <p>El reembolso te deja en el mismo punto. El acompañamiento extendido te lleva a donde querías llegar.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">02</span>
+            <div>
+              <h4>Filtra a los comprometidos</h4>
+              <p>Solo la activa quien lo intentó de verdad. Y esa persona merece todo el apoyo.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">03</span>
+            <div>
+              <h4>€1,500 recuperados con un solo proyecto</h4>
+              <p>No prometemos €5K/mes. Prometemos recuperar lo invertido. El mínimo creíble.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">04</span>
+            <div>
+              <h4>Convierte el precio en cero riesgo</h4>
+              <p>"€1,500 es mucho si no funciona" deja de ser objeción. Si no funciona, seguimos hasta que funcione. Sin coste extra.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     9. TABLA COMPARATIVA
+     ==================================================== -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head fade-in-up">
+      <span class="eyebrow">¿NEXUM GRATIS O NEXUM PRO?</span>
+      <h2 style="font-size: clamp(26px, 3vw, 38px);">Gratis vs. Pro.</h2>
+      <p>Gratis te lleva al primer cliente. Pro te lleva a €5,000/mes de forma sostenible.</p>
+    </div>
+
+    <div class="compare fade-in-up" role="table" aria-label="Comparativa Nexum vs Nexum Academy Pro™">
+      <div class="compare__row compare__head" role="row">
+        <div class="compare__cell" role="columnheader"></div>
+        <div class="compare__cell" role="columnheader">NEXUM (gratis)</div>
+        <div class="compare__cell compare__cell--pro" role="columnheader">NEXUM PRO</div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--label" role="cell">Formación completa (+30 videos)</div>
+        <div class="compare__cell" role="cell">Parcial (~20 videos)</div>
+        <div class="compare__cell compare__cell--pro" role="cell"><span class="compare__check"><i data-lucide="check"></i> Completo</span></div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--label" role="cell">Datos y CRM (Airtable + Kommo)</div>
+        <div class="compare__cell" role="cell"><span class="compare__dash">—</span></div>
+        <div class="compare__cell compare__cell--pro" role="cell"><span class="compare__check"><i data-lucide="check"></i></span></div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--label" role="cell">Soluciones IA listas para vender</div>
+        <div class="compare__cell" role="cell">3-4 básicas</div>
+        <div class="compare__cell compare__cell--pro" role="cell"><span class="compare__check"><i data-lucide="check"></i> Las +7 completas</span></div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--label" role="cell">Agente de Voz (Retell AI)</div>
+        <div class="compare__cell" role="cell"><span class="compare__dash">—</span></div>
+        <div class="compare__cell compare__cell--pro" role="cell"><span class="compare__check"><i data-lucide="check"></i></span></div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--label" role="cell">Mentoría técnica</div>
+        <div class="compare__cell" role="cell">1 mensual</div>
+        <div class="compare__cell compare__cell--pro" role="cell"><span class="compare__check"><i data-lucide="check"></i> Semanal · 3 meses</span></div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--label" role="cell">Mentoría de negocio</div>
+        <div class="compare__cell" role="cell"><span class="compare__dash">—</span></div>
+        <div class="compare__cell compare__cell--pro" role="cell"><span class="compare__check"><i data-lucide="check"></i> Semanal · 3 meses</span></div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--label" role="cell">Mentoría Q&amp;A / Mentalidad</div>
+        <div class="compare__cell" role="cell"><span class="compare__dash">—</span></div>
+        <div class="compare__cell compare__cell--pro" role="cell"><span class="compare__check"><i data-lucide="check"></i> Semanal · 3 meses</span></div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--label" role="cell">Masterclass mensual con referentes</div>
+        <div class="compare__cell" role="cell"><span class="compare__dash">—</span></div>
+        <div class="compare__cell compare__cell--pro" role="cell"><span class="compare__check"><i data-lucide="check"></i></span></div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--label" role="cell">Bolsa de trabajo exclusiva</div>
+        <div class="compare__cell" role="cell"><span class="compare__dash">—</span></div>
+        <div class="compare__cell compare__cell--pro" role="cell"><span class="compare__check"><i data-lucide="check"></i></span></div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--label" role="cell">Llamada 1:1 con founders</div>
+        <div class="compare__cell" role="cell"><span class="compare__dash">—</span></div>
+        <div class="compare__cell compare__cell--pro" role="cell"><span class="compare__check"><i data-lucide="check"></i></span></div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--label" role="cell">WhatsApp directo con founders</div>
+        <div class="compare__cell" role="cell"><span class="compare__dash">—</span></div>
+        <div class="compare__cell compare__cell--pro" role="cell"><span class="compare__check"><i data-lucide="check"></i></span></div>
+      </div>
+      <div class="compare__row" role="row">
+        <div class="compare__cell compare__cell--label" role="cell">Precio</div>
+        <div class="compare__cell" role="cell"><span class="compare__price-free">Gratis · siempre</span></div>
+        <div class="compare__cell compare__cell--pro is-final" role="cell"><span class="compare__price-pro">€1,500 · pago único · 50 plazas</span></div>
+      </div>
+    </div>
+
+    <!-- Mobile cards -->
+    <div class="compare-mobile fade-in-up">
+      <div class="compare-card">
+        <div class="compare-card__head">NEXUM (gratis)</div>
+        <div class="compare-card__row"><span class="compare-card__label">Formación</span><span class="compare-card__val">Parcial (~20 videos)</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Datos y CRM</span><span class="compare-card__val">—</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Soluciones IA</span><span class="compare-card__val">3-4 básicas</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Agente de Voz</span><span class="compare-card__val">—</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Mentoría técnica</span><span class="compare-card__val">1 mensual</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Mentoría negocio</span><span class="compare-card__val">—</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Mentoría Q&amp;A</span><span class="compare-card__val">—</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Masterclass</span><span class="compare-card__val">—</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Bolsa de trabajo</span><span class="compare-card__val">—</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Llamada 1:1</span><span class="compare-card__val">—</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">WhatsApp founders</span><span class="compare-card__val">—</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Precio</span><span class="compare-card__val">Gratis · siempre</span></div>
+      </div>
+      <div class="compare-card is-pro">
+        <div class="compare-card__head">NEXUM PRO</div>
+        <div class="compare-card__row"><span class="compare-card__label">Formación</span><span class="compare-card__val">✓ Completo (+30 videos)</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Datos y CRM</span><span class="compare-card__val">✓</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Soluciones IA</span><span class="compare-card__val">✓ Las +7 completas</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Agente de Voz</span><span class="compare-card__val">✓</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Mentoría técnica</span><span class="compare-card__val">✓ Semanal · 3 meses</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Mentoría negocio</span><span class="compare-card__val">✓ Semanal · 3 meses</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Mentoría Q&amp;A</span><span class="compare-card__val">✓ Semanal · 3 meses</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Masterclass</span><span class="compare-card__val">✓</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Bolsa de trabajo</span><span class="compare-card__val">✓</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Llamada 1:1</span><span class="compare-card__val">✓</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">WhatsApp founders</span><span class="compare-card__val">✓</span></div>
+        <div class="compare-card__row"><span class="compare-card__label">Precio</span><span class="compare-card__val"><span class="compare__price-pro">€1,500 · 50 plazas</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     10. TESTIMONIOS
+     ==================================================== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head fade-in-up">
+      <span class="eyebrow">LA AGENCIA YA ESTÁ FUNCIONANDO</span>
+      <h2 style="font-size: clamp(26px, 3vw, 38px);">Mientras lo piensas, nosotros ya facturamos.</h2>
+      <p>No es teoría. Son los números reales de Nexum AI hoy — los que validan que el sistema funciona porque lo usamos primero nosotros.</p>
+    </div>
+
+    <div class="trust-stats">
+      <div class="trust-stat fade-in-up" data-delay="0">
+        <div class="trust-stat__num" data-count-to="300" data-suffix="K€">300K€</div>
+        <div class="trust-stat__label">Facturados</div>
+      </div>
+      <div class="trust-stat fade-in-up" data-delay="100">
+        <div class="trust-stat__num" data-count-to="3" data-prefix="+" data-suffix=" años">+3 años</div>
+        <div class="trust-stat__label">Construyendo soluciones</div>
+      </div>
+      <div class="trust-stat fade-in-up" data-delay="200">
+        <div class="trust-stat__num" data-count-to="50" data-prefix="+">+50</div>
+        <div class="trust-stat__label">Empresas automatizadas</div>
+      </div>
+      <div class="trust-stat fade-in-up" data-delay="300">
+        <div class="trust-stat__num" data-count-to="30" data-prefix="+">+30</div>
+        <div class="trust-stat__label">Personas capacitadas</div>
+      </div>
+    </div>
+
+    <div class="logos-band fade-in-up">
+      <div class="logos-band__head">EMPRESAS QUE YA TRABAJAN CON SOLUCIONES NEXUM</div>
+      <div class="marquee-wrap" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Venttur</span>
+          <span>Stark</span>
+          <span>TOFO</span>
+          <span>Plotchain</span>
+          <span>Grupo Roisa</span>
+          <span>Bar Facal</span>
+          <span>Narvaja Hogar</span>
+          <span>Finanzas Amigables</span>
+          <span>Venttur</span>
+          <span>Stark</span>
+          <span>TOFO</span>
+          <span>Plotchain</span>
+          <span>Grupo Roisa</span>
+          <span>Bar Facal</span>
+          <span>Narvaja Hogar</span>
+          <span>Finanzas Amigables</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     11. FAQ
+     ==================================================== -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head fade-in-up">
+      <span class="eyebrow">LO QUE TODOS PREGUNTAN ANTES DE ENTRAR</span>
+      <h2>Preguntas frecuentes.</h2>
+    </div>
+
+    <div class="faq" id="faq">
+      <div class="faq__item fade-in-up" data-delay="0">
+        <button class="faq__head" aria-expanded="false">
+          <span>¿Necesito saber programar para entrar?</span>
+          <span class="toggle"><i data-lucide="plus"></i></span>
+        </button>
+        <div class="faq__body"><div class="faq__body-inner">
+          No. El programa arranca desde cero. El módulo técnico te lleva paso a paso por n8n, Claude Code y RAG. La mayoría de nuestros founders nunca escribieron una línea de código antes.
+        </div></div>
+      </div>
+      <div class="faq__item fade-in-up" data-delay="50">
+        <button class="faq__head" aria-expanded="false">
+          <span>¿Cuánto tiempo necesito dedicarle por semana?</span>
+          <span class="toggle"><i data-lucide="plus"></i></span>
+        </button>
+        <div class="faq__body"><div class="faq__body-inner">
+          10-15 horas por semana para llegar al primer cliente en 90 días. Más horas, más rápido. Menos horas, llega igual — solo que más lento.
+        </div></div>
+      </div>
+      <div class="faq__item fade-in-up" data-delay="100">
+        <button class="faq__head" aria-expanded="false">
+          <span>¿Qué pasa si en 90 días no recuperé mi inversión?</span>
+          <span class="toggle"><i data-lucide="plus"></i></span>
+        </button>
+        <div class="faq__body"><div class="faq__body-inner">
+          Seguimos contigo gratis hasta que la recuperes. No te devolvemos el dinero — te damos algo más valioso: mentorías y acompañamiento sin límite. Garantía de resultado, no de devolución.
+        </div></div>
+      </div>
+      <div class="faq__item fade-in-up" data-delay="150">
+        <button class="faq__head" aria-expanded="false">
+          <span>¿El precio sube de verdad el lunes 11?</span>
+          <span class="toggle"><i data-lucide="plus"></i></span>
+        </button>
+        <div class="faq__body"><div class="faq__body-inner">
+          Sí. €1,500 es el precio fundadores para los primeros 50 que arriesgan antes que haya más casos de éxito. Lunes 11 pasa a €2,000. Mismo contenido. Mismas mentorías. €500 más caro.
+        </div></div>
+      </div>
+      <div class="faq__item fade-in-up" data-delay="200">
+        <button class="faq__head" aria-expanded="false">
+          <span>¿Qué incluye exactamente la formación?</span>
+          <span class="toggle"><i data-lucide="plus"></i></span>
+        </button>
+        <div class="faq__body"><div class="faq__body-inner">
+          +30 videos de acceso de por vida divididos en 7 módulos: mentalidad, arquitectura, técnico (n8n + Claude Code + RAG), datos y CRM, venta, prospección y delivery. Más actualizaciones permanentes — el contenido sigue creciendo.
+        </div></div>
+      </div>
+      <div class="faq__item fade-in-up" data-delay="250">
+        <button class="faq__head" aria-expanded="false">
+          <span>¿Puedo pagar en cuotas?</span>
+          <span class="toggle"><i data-lucide="plus"></i></span>
+        </button>
+        <div class="faq__body"><div class="faq__body-inner">
+          €1,500 es pago único — por eso es más bajo. Si necesitas financiación, escríbenos por WhatsApp y vemos caso por caso.
+        </div></div>
+      </div>
+      <div class="faq__item fade-in-up" data-delay="300">
+        <button class="faq__head" aria-expanded="false">
+          <span>¿Cómo recibo el acceso después de pagar?</span>
+          <span class="toggle"><i data-lucide="plus"></i></span>
+        </button>
+        <div class="faq__body"><div class="faq__body-inner">
+          Inmediato. Después del pago en Stripe te llega el email con tus credenciales a Skool: formación, mentorías, comunidad. Empiezas hoy mismo.
+        </div></div>
+      </div>
+      <div class="faq__item fade-in-up" data-delay="350">
+        <button class="faq__head" aria-expanded="false">
+          <span>¿Hay alguna restricción geográfica?</span>
+          <span class="toggle"><i data-lucide="plus"></i></span>
+        </button>
+        <div class="faq__body"><div class="faq__body-inner">
+          No. 100% online. Founders en Uruguay, Argentina, México, España, Colombia, Chile y más. Cobramos en euros vía Stripe — funciona desde cualquier país.
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     12. CHECKOUT FINAL
+     ==================================================== -->
+<section class="section section--lg checkout-final" id="checkout-final">
+  <div class="container">
+    <div class="checkout-final__inner">
+      <div class="fade-in-up">
+        <span class="eyebrow is-mag">ÚLTIMA OPORTUNIDAD AL PRECIO FUNDADORES</span>
+        <h2>Decídete ahora. Te tomó 10 minutos llegar hasta aquí — la decisión te toma 10 segundos.</h2>
+        <p class="lead">"Lunes 11: €500 más caro. Los bonus desaparecen. Si lo viste, lo entendiste y sientes que es para ti — entra ahora. Si dudas, espera al lunes y paga la diferencia."</p>
+      </div>
+
+      <div class="final-summary fade-in-up" data-delay="100">
+        <span class="final-summary__head">TU INVERSIÓN HOY</span>
+        <div class="final-summary__price-row">
+          <span class="final-summary__price">€1,500</span>
+          <span class="final-summary__strike">€2,000</span>
+        </div>
+        <p class="final-summary__caption">pago único · acceso de por vida · 50 plazas totales</p>
+        <hr class="divider" />
+        <ul class="final-summary__list">
+          <li><i data-lucide="check"></i> +30 videos de formación · acceso de por vida</li>
+          <li><i data-lucide="check"></i> +7 soluciones IA listas para vender</li>
+          <li><i data-lucide="check"></i> 3 mentorías semanales · 3 meses</li>
+          <li><i data-lucide="check"></i> Bolsa de trabajo exclusiva VIP</li>
+          <li><i data-lucide="check"></i> Solución AUTOSETTER (bonus)</li>
+          <li><i data-lucide="check"></i> WhatsApp directo con founders 3 meses (bonus)</li>
+          <li><i data-lucide="check"></i> 3 meses extra de mentorías (bonus)</li>
+          <li><i data-lucide="check"></i> Garantía de resultado a 90 días</li>
+        </ul>
+        <hr class="divider" />
+        <a href="#" class="btn-primary btn-primary--xl btn-primary--full" data-stripe data-track="click_checkout_final">
+          RESERVAR MI PLAZA AHORA · €1,500 →
+        </a>
+        <div class="trust-line" style="display:flex; justify-content:center; margin-top: 16px;">
+          <i data-lucide="lock"></i>
+          Pago seguro vía Stripe · todas las tarjetas · acceso inmediato
+        </div>
+        <div class="cards-row">
+          <!-- Visa -->
+          <svg viewBox="0 0 48 16" xmlns="http://www.w3.org/2000/svg" aria-label="Visa"><rect width="48" height="16" rx="3" fill="#1A1F71"/><text x="24" y="11.5" font-family="Inter, sans-serif" font-weight="900" font-size="9" fill="#fff" text-anchor="middle" letter-spacing="1">VISA</text></svg>
+          <!-- Mastercard -->
+          <svg viewBox="0 0 48 16" xmlns="http://www.w3.org/2000/svg" aria-label="Mastercard"><rect width="48" height="16" rx="3" fill="#16191F"/><circle cx="20" cy="8" r="5" fill="#EB001B"/><circle cx="28" cy="8" r="5" fill="#F79E1B" fill-opacity="0.85"/></svg>
+          <!-- AMEX -->
+          <svg viewBox="0 0 48 16" xmlns="http://www.w3.org/2000/svg" aria-label="American Express"><rect width="48" height="16" rx="3" fill="#2E77BC"/><text x="24" y="11.5" font-family="Inter, sans-serif" font-weight="900" font-size="7.5" fill="#fff" text-anchor="middle" letter-spacing="0.4">AMEX</text></svg>
+          <!-- Stripe -->
+          <svg viewBox="0 0 56 16" xmlns="http://www.w3.org/2000/svg" aria-label="Stripe"><rect width="56" height="16" rx="3" fill="#635BFF"/><text x="28" y="11.5" font-family="Inter, sans-serif" font-weight="800" font-size="8" fill="#fff" text-anchor="middle" letter-spacing="0.3">stripe</text></svg>
+        </div>
+      </div>
+
+      <p class="closer fade-in-up">"Los que están adentro ya están construyendo. Los que duden van a pagar €500 más por la misma cosa el lunes. Decídete."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     13. FOOTER
+     ==================================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__brand-wrap">
+      <img src="assets/logo-nexum-ai.svg" alt="Nexum AI" class="footer__logo" />
+      <p>Agencia de IA y automatización. Construimos sistemas que generan ingresos para empresas en LATAM y España.</p>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Nexum AI · Todos los derechos reservados</span>
+      <span class="right"><i data-lucide="lock"></i> Pagos procesados de forma segura por Stripe</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ====================================================
+     STICKY MOBILE CHECKOUT BAR
+     ==================================================== -->
+<div class="mobile-bar" id="mobile-bar" role="region" aria-label="Checkout móvil">
+  <div class="mobile-bar__price">
+    <strong>€1,500</strong>
+    <span>pago único</span>
+  </div>
+  <a href="#" class="mobile-bar__btn" data-stripe data-track="click_checkout_mobile_sticky">
+    Comprar →
+  </a>
+</div>
+
+<!-- ====================================================
+     LUCIDE
+     ==================================================== -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+<!-- ====================================================
+     APP SCRIPT
+     ==================================================== -->
+<script>
+(function () {
+  'use strict';
+
+  // ----- CONFIG -----
+  const CONFIG = {
+    STRIPE_CHECKOUT_URL: 'https://buy.stripe.com/PLACEHOLDER_NEXUM_PRO',
+    DEADLINE_DATE: new Date('2026-05-10T23:59:59-03:00'),
+    PRICE_FOUNDERS: 1500,
+    PRICE_REGULAR: 2000,
+    CURRENCY: 'EUR',
+    CURRENCY_SYMBOL: '€',
+    PLAZAS_TOTAL: 50,
+    WHATSAPP_FOUNDERS: '+59891234567',
+    CONTACT_EMAIL: 'admin@nexumai.online'
+  };
+  window.NEXUM_CONFIG = CONFIG;
+
+  // ----- TRACK -----
+  function track(eventName) {
+    try {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: eventName, ts: Date.now() });
+    } catch (e) {}
+    if (typeof console !== 'undefined' && console.info) {
+      console.info('[track]', eventName);
+    }
+  }
+
+  // ----- STRIPE LINKS -----
+  function wireStripeLinks() {
+    document.querySelectorAll('[data-stripe]').forEach(el => {
+      el.setAttribute('href', CONFIG.STRIPE_CHECKOUT_URL);
+      el.addEventListener('click', (ev) => {
+        const evt = el.getAttribute('data-track') || 'click_checkout_unknown';
+        track(evt);
+      });
+    });
+    document.querySelectorAll('[data-track]:not([data-stripe])').forEach(el => {
+      el.addEventListener('click', () => {
+        track(el.getAttribute('data-track'));
+      });
+    });
+  }
+
+  // ----- COUNTDOWN -----
+  const cd = {
+    days:    document.querySelector('[data-cd="days"]'),
+    hours:   document.querySelector('[data-cd="hours"]'),
+    minutes: document.querySelector('[data-cd="minutes"]'),
+    seconds: document.querySelector('[data-cd="seconds"]')
+  };
+  const topbarEl = document.getElementById('topbar');
+  const countdownEl = document.getElementById('topbar-countdown');
+
+  function pad2(n) { n = Math.max(0, n|0); return n < 10 ? '0' + n : '' + n; }
+
+  function setDigit(el, val) {
+    if (!el) return;
+    const next = pad2(val);
+    if (el.textContent === next) return;
+    el.textContent = next;
+    el.classList.add('is-flip');
+    setTimeout(() => el.classList.remove('is-flip'), 220);
+  }
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = CONFIG.DEADLINE_DATE.getTime() - now.getTime();
+    if (diff <= 0) {
+      if (topbarEl) topbarEl.style.display = 'none';
+      const mb = document.getElementById('mobile-bar');
+      if (mb) mb.style.display = 'none';
+      return false;
+    }
+    const totalSec = Math.floor(diff / 1000);
+    const days  = Math.floor(totalSec / 86400);
+    const hours = Math.floor((totalSec % 86400) / 3600);
+    const mins  = Math.floor((totalSec % 3600) / 60);
+    const secs  = totalSec % 60;
+
+    setDigit(cd.days,    days);
+    setDigit(cd.hours,   hours);
+    setDigit(cd.minutes, mins);
+    setDigit(cd.seconds, secs);
+
+    if (countdownEl && days === 0) countdownEl.classList.add('cd-no-days');
+    return true;
+  }
+
+  // ----- FAQ -----
+  function wireFaq() {
+    const items = document.querySelectorAll('#faq .faq__item');
+    items.forEach(item => {
+      const head = item.querySelector('.faq__head');
+      const body = item.querySelector('.faq__body');
+      if (!head || !body) return;
+      head.addEventListener('click', () => {
+        const isOpen = item.classList.contains('is-open');
+        if (isOpen) {
+          body.style.maxHeight = '0px';
+          item.classList.remove('is-open');
+          head.setAttribute('aria-expanded', 'false');
+        } else {
+          // close others (optional: keep multi-open). Single-open accordion:
+          items.forEach(other => {
+            if (other !== item && other.classList.contains('is-open')) {
+              other.classList.remove('is-open');
+              const oBody = other.querySelector('.faq__body');
+              const oHead = other.querySelector('.faq__head');
+              if (oBody) oBody.style.maxHeight = '0px';
+              if (oHead) oHead.setAttribute('aria-expanded', 'false');
+            }
+          });
+          item.classList.add('is-open');
+          body.style.maxHeight = body.scrollHeight + 'px';
+          head.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  }
+
+  // ----- COUNT UP (trust stats) -----
+  function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+  function animateCount(el) {
+    const target = parseInt(el.getAttribute('data-count-to'), 10);
+    if (!Number.isFinite(target)) return;
+    const prefix = el.getAttribute('data-prefix') || '';
+    const suffix = el.getAttribute('data-suffix') || '';
+    const dur = 1600;
+    const start = performance.now();
+    function frame(now) {
+      const t = Math.min(1, (now - start) / dur);
+      const v = Math.round(target * easeOutQuart(t));
+      el.textContent = prefix + v + suffix;
+      if (t < 1) requestAnimationFrame(frame);
+      else el.textContent = prefix + target + suffix;
+    }
+    requestAnimationFrame(frame);
+  }
+  function wireCountUps() {
+    const els = document.querySelectorAll('[data-count-to]');
+    if (!('IntersectionObserver' in window) || !els.length) {
+      els.forEach(animateCount);
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    els.forEach(el => { el.textContent = (el.getAttribute('data-prefix') || '') + '0' + (el.getAttribute('data-suffix') || ''); io.observe(el); });
+  }
+
+  // ----- INTERSECTION OBSERVER (fade-in-up) -----
+  function wireReveals() {
+    const els = document.querySelectorAll('.fade-in-up');
+    els.forEach(el => {
+      const d = el.getAttribute('data-delay');
+      if (d) el.style.setProperty('--delay', d + 'ms');
+    });
+
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(el => el.classList.add('visible'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => io.observe(el));
+  }
+
+  // ----- HERO GRID BACKGROUND -----
+  // Cada celda recibe --del, --dur, --base-op, --peak-op vía CSS custom props.
+  // El delay se calcula como una "ola diagonal" + jitter random, así parece
+  // que la luz recorre la grilla en lugar de pulsar simétrica.
+  function buildHeroGrid() {
+    const svg = document.getElementById('hero-grid');
+    if (!svg) return;
+    const cols = 22, rows = 14;
+    const cellW = 100 / cols;
+    const cellH = 100 / rows;
+    svg.setAttribute('viewBox', '0 0 100 100');
+    svg.setAttribute('width', '100%');
+    svg.setAttribute('height', '100%');
+    svg.setAttribute('preserveAspectRatio', 'none');
+
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let html = '';
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < cols; x++) {
+        const cx = (x + 0.5) * cellW;
+        const cy = (y + 0.5) * cellH;
+        const dx = cx - 50;
+        const dy = cy - 28;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+
+        // Base opacity: más cerca del centro = un toque más visible (quieto)
+        const baseOp = Math.max(0.05, Math.min(0.20, 0.24 - dist / 240));
+        // Peak opacity: cuanto más cerca del centro/superior, más intenso el flash
+        const peakOp = Math.max(0.30, Math.min(0.85, 0.95 - dist / 130));
+
+        const isHot = dist < 24;
+
+        // Delay como ola diagonal: x*A + y*B con jitter random
+        const wave = (x * 0.12) + (y * 0.18);
+        const jitter = Math.random() * 1.6;
+        const del = ((wave + jitter) % 5).toFixed(2);
+        const dur = (4.5 + Math.random() * 2.2).toFixed(2);
+
+        html += `<rect class="gcell${isHot ? ' is-hot' : ''}"`
+              + ` x="${(x*cellW).toFixed(3)}" y="${(y*cellH).toFixed(3)}"`
+              + ` width="${(cellW*0.86).toFixed(3)}" height="${(cellH*0.78).toFixed(3)}"`
+              + ` rx="0.5" fill="#A46BED"`
+              + ` style="--base-op:${baseOp.toFixed(3)};--peak-op:${peakOp.toFixed(3)};--del:${del}s;--dur:${dur}s${reduce ? ';animation:none;fill-opacity:'+baseOp.toFixed(3) : ''}"`
+              + `/>`;
+      }
+    }
+    svg.innerHTML = html;
+  }
+
+  // ----- MOBILE BAR VISIBILITY -----
+  function wireMobileBar() {
+    const bar = document.getElementById('mobile-bar');
+    if (!bar) return;
+    let lastY = 0;
+    function onScroll() {
+      const y = window.scrollY || window.pageYOffset || 0;
+      // Show after passing the hero (~600px)
+      if (y > 600) bar.classList.add('is-visible');
+      else bar.classList.remove('is-visible');
+      lastY = y;
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  // ----- INIT -----
+  function init() {
+    wireStripeLinks();
+    wireFaq();
+    wireReveals();
+    wireCountUps();
+    buildHeroGrid();
+    wireMobileBar();
+
+    if (updateCountdown()) {
+      setInterval(updateCountdown, 1000);
+    }
+
+    // Lucide may load after DOM ready
+    function tryLucide() {
+      if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons({ attrs: { 'stroke-width': 2 } });
+      } else {
+        setTimeout(tryLucide, 80);
+      }
+    }
+    tryLucide();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>
