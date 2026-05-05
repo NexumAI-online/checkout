@@ -172,6 +172,7 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
 @keyframes drawUnderline { to { transform: scaleX(1); } }
 
 .divider { height: 1px; background: var(--border-subtle); margin: 24px 0; border: 0; }
+.summary-card .divider { margin: 14px 0; }
 
 /* =========================
    TOP BAR (urgencia)
@@ -299,8 +300,7 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
    ========================= */
 .hero {
   position: relative;
-  min-height: 92vh;
-  padding: 80px 0 100px;
+  padding: 32px 0 56px;
   background: var(--bg-primary);
   overflow: hidden;
   isolation: isolate;
@@ -326,7 +326,7 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(420px, 1fr);
   gap: 64px;
-  align-items: center;
+  align-items: start;
 }
 @media (max-width: 1023px) {
   .hero { padding: 56px 0 72px; min-height: auto; }
@@ -361,29 +361,29 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
 }
 
 .hero h1 {
-  font-size: clamp(38px, 5vw, 64px);
+  font-size: clamp(32px, 4.2vw, 52px);
   font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
   color: var(--text-primary);
-  margin: 24px 0 0;
+  margin: 20px 0 0;
 }
 .hero h1 .soft { color: var(--text-secondary); }
 .hero__sub {
-  margin: 24px 0 0;
-  font-size: clamp(17px, 1.5vw, 20px);
+  margin: 20px 0 0;
+  font-size: clamp(16px, 1.3vw, 18px);
   font-weight: 500;
   line-height: 1.5;
   color: #E8DFF5;
-  max-width: 540px;
+  max-width: 520px;
 }
 
 .hero__bullets {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 32px;
-  max-width: 540px;
+  gap: 10px;
+  margin-top: 24px;
+  max-width: 520px;
 }
 @media (max-width: 540px) { .hero__bullets { grid-template-columns: 1fr; } }
 .hero__bullet {
@@ -573,7 +573,7 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
   background: var(--bg-card-elevated);
   border: 1px solid var(--border-medium);
   border-radius: 24px;
-  padding: 32px;
+  padding: 28px;
   overflow: hidden;
   isolation: isolate;
 }
@@ -586,18 +586,27 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
   pointer-events: none;
 }
 .summary-card__badge {
-  position: absolute;
-  top: -12px;
-  left: 24px;
-  background: var(--bg-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(242, 57, 255, 0.12);
   color: var(--magenta-300);
   font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   font-weight: 800;
-  padding: 4px 12px;
+  padding: 5px 12px;
   border-radius: 100px;
-  border: 1px solid var(--border-medium);
+  border: 1px solid rgba(242, 57, 255, 0.3);
+  margin-bottom: 14px;
+}
+.summary-card__badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--magenta-500);
+  box-shadow: 0 0 8px rgba(242, 57, 255, 0.7);
 }
 
 /* Internal price block */
@@ -605,8 +614,8 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
   position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border-medium);
-  border-radius: 16px;
-  padding: 22px 22px 18px;
+  border-radius: 14px;
+  padding: 18px 18px 14px;
 }
 .summary-price .price-block__ribbon {
   top: 14px;
@@ -630,7 +639,7 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
   margin-bottom: 4px;
 }
 .summary-price__main {
-  font-size: clamp(40px, 5vw, 56px);
+  font-size: clamp(36px, 4.2vw, 48px);
   font-weight: 900;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -647,21 +656,21 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
   font-weight: 700;
 }
 .summary-price__foot {
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--text-tertiary);
-  margin: 14px 0 0;
+  margin: 10px 0 0;
 }
 .summary-price__foot strong { color: var(--text-primary); font-weight: 800; }
 
 .summary-cta {
-  margin-top: 18px;
-  font-size: 16px !important;
-  padding: 18px 24px !important;
-  border-radius: 14px !important;
+  margin-top: 14px;
+  font-size: 15px !important;
+  padding: 16px 24px !important;
+  border-radius: 12px !important;
 }
 .summary-trust {
-  margin-top: 14px;
-  font-size: 12px;
+  margin-top: 10px;
+  font-size: 11.5px;
   color: var(--text-tertiary);
   display: flex;
   justify-content: center;
@@ -669,32 +678,35 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
   flex-wrap: wrap;
 }
 .summary-pills {
-  margin-top: 14px;
+  margin-top: 10px;
+  gap: 6px;
   justify-content: center;
 }
-.summary-pills .trust-pill { font-size: 11px; padding: 6px 12px; }
+.summary-pills .trust-pill { font-size: 10.5px; padding: 5px 10px; gap: 5px; }
+.summary-pills .trust-pill svg { width: 12px; height: 12px; }
 .summary-card h2 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
   color: var(--text-primary);
-  margin: 12px 0 6px;
+  margin: 0 0 6px;
   letter-spacing: -0.015em;
+  line-height: 1.2;
 }
 .summary-card__sub {
   font-size: 14px;
   color: var(--text-tertiary);
   margin: 0;
 }
-.summary-card__list { display: flex; flex-direction: column; gap: 6px; }
+.summary-card__list { display: flex; flex-direction: column; gap: 2px; }
 .summary-card__list li {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  padding: 8px 0;
-  font-size: 14px;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 13.5px;
   font-weight: 500;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.45;
 }
 .summary-card__list li .icon-circle { width: 24px; height: 24px; }
 .summary-card__list li .icon-circle svg { width: 14px; height: 14px; }
@@ -1613,9 +1625,9 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
   50%      { fill-opacity: var(--peak-op); filter: drop-shadow(0 0 3px rgba(242, 57, 255, 0.6)); }
 }
 
-/* Sweep diagonal — GPU transform, sin mix-blend-mode (jankea durante scroll).
-   Dos bandas pre-mezcladas a 25% y 75% del elemento de 200% width.
-   El wrap -50% → 0% es invisible (banda 2 cae donde estaba banda 1). */
+/* Sweep diagonal — apenas perceptible, GPU transform sin mix-blend-mode.
+   Dos bandas pre-mezcladas con violeta oscuro a 25% y 75%.
+   Translúcido para que se sienta como "algo pasando por debajo" sin distraer. */
 .hero__sweep {
   position: absolute;
   top: 0;
@@ -1625,17 +1637,17 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
   z-index: -1;
   pointer-events: none;
   background: linear-gradient(115deg,
-    transparent 0%,    transparent 16%,
-    rgba(164, 107, 237, 0.18) 23%,
-    rgba(242, 57, 255, 0.30) 25%,
-    rgba(164, 107, 237, 0.18) 27%,
-    transparent 34%,   transparent 66%,
-    rgba(164, 107, 237, 0.18) 73%,
-    rgba(242, 57, 255, 0.30) 75%,
-    rgba(164, 107, 237, 0.18) 77%,
-    transparent 84%,   transparent 100%);
+    transparent 0%,    transparent 19%,
+    rgba(96, 36, 173, 0.07) 23%,
+    rgba(137, 67, 227, 0.13) 25%,
+    rgba(96, 36, 173, 0.07) 27%,
+    transparent 31%,   transparent 69%,
+    rgba(96, 36, 173, 0.07) 73%,
+    rgba(137, 67, 227, 0.13) 75%,
+    rgba(96, 36, 173, 0.07) 77%,
+    transparent 81%,   transparent 100%);
   opacity: 1;
-  animation: sweep 12s linear infinite;
+  animation: sweep 14s linear infinite;
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
@@ -1964,23 +1976,11 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
 
       <ul class="summary-card__list">
         <li><span class="icon-circle icon-circle-grad"><i data-lucide="check"></i></span> Formación completa — +30 videos · acceso de por vida</li>
-        <li><span class="icon-circle icon-circle-grad"><i data-lucide="check"></i></span> +7 soluciones IA listas para vender · ticket €500–€3,000</li>
+        <li><span class="icon-circle icon-circle-grad"><i data-lucide="check"></i></span> +7 soluciones IA listas para vender</li>
         <li><span class="icon-circle icon-circle-grad"><i data-lucide="check"></i></span> 3 mentorías semanales en vivo · 3 meses</li>
-        <li><span class="icon-circle icon-circle-grad"><i data-lucide="check"></i></span> Bolsa de trabajo exclusiva VIP</li>
-        <li><span class="icon-circle icon-circle-grad"><i data-lucide="check"></i></span> Comunidad de +50 founders en acción</li>
-        <li><span class="icon-circle icon-circle-grad"><i data-lucide="check"></i></span> Masterclass mensual con referentes de la industria</li>
+        <li><span class="icon-circle icon-circle-grad"><i data-lucide="check"></i></span> Comunidad de +50 founders + bolsa de trabajo VIP</li>
+        <li><span class="icon-circle icon-circle-grad"><i data-lucide="check"></i></span> 4 bonus de acción rápida (valor +€2,682)</li>
       </ul>
-
-      <hr class="divider" />
-
-      <div class="summary-bonus">
-        <span class="summary-bonus__head">BONUS DE ACCIÓN RÁPIDA</span>
-        <ul class="summary-bonus__list">
-          <li><i data-lucide="zap"></i> Solución AUTOSETTER (sistema setter automatizado)</li>
-          <li><i data-lucide="zap"></i> WhatsApp directo con los founders · 3 meses</li>
-          <li><i data-lucide="zap"></i> 3 meses extra de mentorías (de 3 a 6 meses)</li>
-        </ul>
-      </div>
 
       <hr class="divider" />
 
@@ -1997,7 +1997,7 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
             <div class="summary-price__strike">€2,000</div>
           </div>
         </div>
-        <p class="summary-price__foot">valor total percibido: <strong>€8,065</strong> · pago único</p>
+        <p class="summary-price__foot">pago único · acceso de por vida</p>
       </div>
 
       <!-- CTA único -->
