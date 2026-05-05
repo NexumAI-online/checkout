@@ -1553,6 +1553,177 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
 .fade-in-up.visible { opacity: 1; transform: translateY(0); }
 
 /* =========================
+   CHECKOUT MODAL
+   ========================= */
+.modal[hidden] { display: none; }
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 250ms var(--ease);
+}
+.modal.is-open { opacity: 1; }
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 0, 5, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+.modal__panel {
+  position: relative;
+  background: var(--bg-card-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: 24px;
+  padding: 36px 32px 28px;
+  max-width: 460px;
+  width: 100%;
+  isolation: isolate;
+  overflow: hidden;
+  transform: translateY(20px) scale(0.96);
+  transition: transform 320ms var(--ease);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(137, 67, 227, 0.15);
+}
+.modal.is-open .modal__panel { transform: translateY(0) scale(1); }
+.modal__panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(137, 67, 227, 0.22) 0%, transparent 60%);
+  z-index: -1;
+  pointer-events: none;
+}
+.modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(196, 184, 214, 0.08);
+  color: var(--text-tertiary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 600;
+  transition: background 150ms var(--ease), color 150ms var(--ease);
+  z-index: 1;
+}
+.modal__close:hover { background: rgba(242, 57, 255, 0.18); color: #fff; }
+.modal__head { text-align: center; margin-bottom: 22px; }
+.modal__head .eyebrow { margin-bottom: 8px; }
+.modal__head h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.modal__head p {
+  font-size: 13.5px;
+  color: var(--text-tertiary);
+  margin: 0;
+  line-height: 1.45;
+}
+.modal__fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+@media (max-width: 480px) { .modal__fields { grid-template-columns: 1fr; } }
+.modal__field label {
+  display: block;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.modal__select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: 12px;
+  padding: 14px 40px 14px 14px;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23A46BED' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  transition: border-color 150ms var(--ease), box-shadow 150ms var(--ease);
+}
+.modal__select:focus {
+  outline: none;
+  border-color: var(--purple-500);
+  box-shadow: 0 0 0 3px rgba(137, 67, 227, 0.2);
+}
+.modal__select option { background: var(--bg-card); color: var(--text-primary); }
+.modal__summary {
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  background: var(--gradient-brand-soft);
+  border: 1px solid var(--border-medium);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.modal__summary-label {
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--text-tertiary);
+}
+.modal__summary-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.modal__cta {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 18px;
+  font-size: 16px !important;
+  padding: 18px 24px !important;
+  border-radius: 14px !important;
+}
+.modal__cta svg { width: 18px; height: 18px; }
+.modal__note {
+  margin: 14px 0 0;
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+@media (max-width: 480px) {
+  .modal { padding: 12px; }
+  .modal__panel { padding: 28px 22px 22px; border-radius: 20px; }
+  .modal__head h3 { font-size: 20px; }
+}
+
+/* =========================
    MOBILE OPTIMIZATIONS
    ========================= */
 @media (max-width: 767px) {
@@ -2758,6 +2929,53 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
 </div>
 
 <!-- ====================================================
+     CHECKOUT MODAL — moneda + cuotas → link Stripe correcto
+     ==================================================== -->
+<div class="modal" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+  <div class="modal__backdrop" data-modal-close aria-hidden="true"></div>
+  <div class="modal__panel" role="document">
+    <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">×</button>
+    <div class="modal__head">
+      <span class="eyebrow is-mag">RESERVA TU PLAZA</span>
+      <h3 id="modal-title">Elige cómo pagar.</h3>
+      <p>Vas al checkout seguro de Stripe en un segundo.</p>
+    </div>
+
+    <div class="modal__fields">
+      <div class="modal__field">
+        <label for="modal-currency">Moneda</label>
+        <select id="modal-currency" class="modal__select" aria-label="Moneda">
+          <option value="EUR">€ Euros (EUR)</option>
+          <option value="USD">$ Dólares (USD)</option>
+        </select>
+      </div>
+      <div class="modal__field">
+        <label for="modal-installments">Cuotas</label>
+        <select id="modal-installments" class="modal__select" aria-label="Cantidad de cuotas">
+          <option value="1">1 cuota — pago único</option>
+          <option value="2">2 cuotas</option>
+          <option value="3">3 cuotas</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="modal__summary">
+      <span class="modal__summary-label">Tu selección</span>
+      <span class="modal__summary-value" id="modal-summary-value">€ EUR · 1 cuota</span>
+    </div>
+
+    <a href="#" class="btn-primary modal__cta" id="modal-continue" target="_self" rel="noopener">
+      <i data-lucide="lock"></i> Ir al pago seguro →
+    </a>
+
+    <p class="modal__note">
+      Pago procesado por Stripe · SSL encriptado<br>
+      Acceso inmediato tras el pago
+    </p>
+  </div>
+</div>
+
+<!-- ====================================================
      LUCIDE
      ==================================================== -->
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
@@ -2770,8 +2988,20 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
   'use strict';
 
   // ----- CONFIG -----
+  const STRIPE_LINKS = {
+    EUR: {
+      1: 'https://buy.stripe.com/7sY5kDgK5c0wcjP2eJf3a00',
+      2: 'https://buy.stripe.com/eVqeVd9hD1lS83zaLff3a01',
+      3: 'https://buy.stripe.com/bJe5kD1Pb4y4erX4mRf3a02'
+    },
+    USD: {
+      1: 'https://buy.stripe.com/dRm14neBX6Gc1Fb7z3f3a06',
+      2: 'https://buy.stripe.com/bJeaEX65r0hO6Zv06Bf3a07',
+      3: 'https://buy.stripe.com/9B6fZh51nfcI4Rn06Bf3a08'
+    }
+  };
   const CONFIG = {
-    STRIPE_CHECKOUT_URL: 'https://buy.stripe.com/PLACEHOLDER_NEXUM_PRO',
+    STRIPE_LINKS: STRIPE_LINKS,
     DEADLINE_DATE: new Date('2026-05-10T23:59:59-03:00'),
     PRICE_FOUNDERS: 1500,
     PRICE_REGULAR: 2000,
@@ -2782,6 +3012,12 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
     CONTACT_EMAIL: 'admin@nexumai.online'
   };
   window.NEXUM_CONFIG = CONFIG;
+
+  function getStripeUrl(currency, installments) {
+    const c = STRIPE_LINKS[currency];
+    if (!c) return null;
+    return c[String(installments)] || c[parseInt(installments, 10)] || null;
+  }
 
   // ----- TRACK -----
   function track(eventName) {
@@ -2794,13 +3030,84 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
     }
   }
 
-  // ----- STRIPE LINKS -----
+  // ----- CHECKOUT MODAL -----
+  const modalEl = document.getElementById('checkout-modal');
+  const modalCurrency = document.getElementById('modal-currency');
+  const modalInstallments = document.getElementById('modal-installments');
+  const modalContinue = document.getElementById('modal-continue');
+  const modalSummary = document.getElementById('modal-summary-value');
+  let lastFocusedTrigger = null;
+
+  function updateModalSummary() {
+    if (!modalCurrency || !modalInstallments || !modalContinue) return;
+    const currency = modalCurrency.value;
+    const installments = modalInstallments.value;
+    const url = getStripeUrl(currency, installments);
+    const symbol = currency === 'USD' ? '$' : '€';
+    const cuotaTxt = installments === '1' ? '1 cuota · pago único' : installments + ' cuotas';
+    if (modalSummary) modalSummary.textContent = symbol + ' ' + currency + ' · ' + cuotaTxt;
+    if (url) {
+      modalContinue.setAttribute('href', url);
+      modalContinue.removeAttribute('aria-disabled');
+    } else {
+      modalContinue.setAttribute('href', '#');
+      modalContinue.setAttribute('aria-disabled', 'true');
+    }
+  }
+
+  function openCheckoutModal(source) {
+    if (!modalEl) return;
+    lastFocusedTrigger = document.activeElement;
+    modalEl.removeAttribute('hidden');
+    requestAnimationFrame(() => modalEl.classList.add('is-open'));
+    document.body.style.overflow = 'hidden';
+    updateModalSummary();
+    setTimeout(() => { if (modalCurrency) modalCurrency.focus(); }, 80);
+    track('open_checkout_modal' + (source ? ('_' + source) : ''));
+  }
+
+  function closeCheckoutModal() {
+    if (!modalEl) return;
+    modalEl.classList.remove('is-open');
+    setTimeout(() => modalEl.setAttribute('hidden', ''), 250);
+    document.body.style.overflow = '';
+    if (lastFocusedTrigger && typeof lastFocusedTrigger.focus === 'function') {
+      try { lastFocusedTrigger.focus(); } catch (e) {}
+    }
+  }
+
+  function wireModal() {
+    if (!modalEl) return;
+    modalEl.querySelectorAll('[data-modal-close]').forEach(el => {
+      el.addEventListener('click', (ev) => { ev.preventDefault(); closeCheckoutModal(); });
+    });
+    if (modalCurrency) modalCurrency.addEventListener('change', updateModalSummary);
+    if (modalInstallments) modalInstallments.addEventListener('change', updateModalSummary);
+    document.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape' && modalEl.classList.contains('is-open')) closeCheckoutModal();
+    });
+    if (modalContinue) {
+      modalContinue.addEventListener('click', (ev) => {
+        const url = modalContinue.getAttribute('href');
+        if (!url || url === '#') { ev.preventDefault(); return; }
+        const c = modalCurrency ? modalCurrency.value : 'EUR';
+        const n = modalInstallments ? modalInstallments.value : '1';
+        track('checkout_proceed_' + c + '_' + n);
+      });
+    }
+    updateModalSummary();
+  }
+
+  // ----- TRIGGERS — todos los CTAs abren el modal en lugar de ir directo -----
   function wireStripeLinks() {
     document.querySelectorAll('[data-stripe]').forEach(el => {
-      el.setAttribute('href', CONFIG.STRIPE_CHECKOUT_URL);
+      el.setAttribute('href', '#');
       el.addEventListener('click', (ev) => {
+        ev.preventDefault();
         const evt = el.getAttribute('data-track') || 'click_checkout_unknown';
         track(evt);
+        const source = evt.replace(/^click_checkout_?/, '') || 'cta';
+        openCheckoutModal(source);
       });
     });
     document.querySelectorAll('[data-track]:not([data-stripe])').forEach(el => {
@@ -3013,6 +3320,7 @@ hr { border: 0; height: 1px; background: var(--border-subtle); margin: 0; }
 
   // ----- INIT -----
   function init() {
+    wireModal();
     wireStripeLinks();
     wireFaq();
     wireReveals();
